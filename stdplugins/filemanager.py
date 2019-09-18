@@ -24,7 +24,7 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "ls -lh ./ravana/"
+    cmd = "ls -lh ./chauhan/"
 #    if dirname == tempdir:
 	
     eply_to_id = event.message.id
@@ -34,7 +34,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**Files in [Ravana's](tg://need_update_for_some_feature/) DOWNLOADS Folder:**\n"
+    OUTPUT = f"**Files in [cHAuHaN's](tg://need_update_for_some_feature/) DOWNLOADS Folder:**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -213,14 +213,14 @@ async def handler(event):
      await event.edit("✅ File Deleted 🗑")
 	 
     else:
-         await event.edit("⛔️File Not Found സാധനം കയ്യിലില്ല😬")
+         await event.edit("⛔️File Not Found😬")
         
 @borg.on(events.NewMessage(pattern=r"\.delocal (.*)", outgoing=True))
 async def handler(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    pathtofile = f"./ravana/{input_str}"
+    pathtofile = f"./chauhan/{input_str}"
 
 	
     if os.path.isfile(pathtofile):
