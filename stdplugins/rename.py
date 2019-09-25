@@ -56,7 +56,7 @@ async def _(event):
             round(percentage, 2))
         estimated_total_time = downloader.get_eta(human=True)
         try:
-            current_message = f"trying to download\n"
+            current_message = f"Trying to download\n"
             current_message += f"URL: {url}\n"
             current_message += f"File Name: {file_name}\n"
             current_message += f"{progress_str}\n"
@@ -82,7 +82,7 @@ async def _(event):
                 reply_to=event.message.id,
                 thumb=thumb,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, event, c_time, "trying to upload")
+                    progress(d, t, event, c_time, "Trying to upload")
                 )
             )
             end_two = datetime.now()
@@ -102,7 +102,7 @@ async def _(event):
     thumb = None
     if os.path.exists(thumb_image_path):
         thumb = thumb_image_path
-    await event.edit("Rename & Upload in process 🙄🙇‍♂️🙇‍♂️🙇‍♀️ It might take some time if file size is big")
+    await event.edit("Rename & Upload in process 🙇‍♂️🙇‍♂️🙇‍♀️ It might take some time if file size is big")
     input_str = event.pattern_match.group(1)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
@@ -117,7 +117,7 @@ async def _(event):
             reply_message,
             downloaded_file_name,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, event, c_time, "trying to download")
+                progress(d, t, event, c_time, "Trying to download")
             )
         )
         end = datetime.now()
@@ -133,7 +133,7 @@ async def _(event):
                 reply_to=event.message.id,
                 thumb=thumb,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, event, c_time, "trying to upload")
+                    progress(d, t, event, c_time, "Trying to upload")
                 )
             )
             end_two = datetime.now()
@@ -143,7 +143,7 @@ async def _(event):
         else:
             await event.edit("File Not Found {}".format(input_str))
     else:
-        await event.edit("Syntax // .rnupload file.name as reply to a Telegram media")
+        await event.edit("Syntax // .rnupload `File name` as reply to a Telegram media")
 
 
 @borg.on(admin_cmd(pattern="rnstreamupload (.*)"))
@@ -165,7 +165,7 @@ async def _(event):
             reply_message,
             downloaded_file_name,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, event, c_time, "trying to download")
+                progress(d, t, event, c_time, "Trying to download")
             )
         )
         end_one = datetime.now()
@@ -210,7 +210,7 @@ async def _(event):
                         )
                     ],
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, event, c_time, "trying to upload")
+                        progress(d, t, event, c_time, "Trying to upload")
                     )
                 )
             except Exception as e:
@@ -223,4 +223,4 @@ async def _(event):
         else:
             await event.edit("File Not Found {}".format(input_str))
     else:
-        await event.edit("Syntax // .rnstreamupload file.name as reply to a Telegram media")
+        await event.edit("Syntax // .rnstreamupload `File name` as reply to a Telegram media")

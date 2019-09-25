@@ -144,11 +144,11 @@ async def progress_status(gid,event,previous):
 			return
 	except Exception as e:
 		if " not found" in str(e) or "'file'" in str(e):
-			await event.edit("Download Canceled :\n`{}`".format(file.name))
+			await event.edit("Download Cancelled :\n`{}`".format(file.name))
 			return
 		elif " depth exceeded" in str(e):
 			file.remove(force=True)
-			await event.edit("Download Auto Canceled :\n`{}`\nYour Torrent/Link is Dead.".format(file.name))
+			await event.edit("Download Auto Cancelled :\n`{}`\nYour Torrent/Link is Dead.".format(file.name))
 		else:
 			logger.info(str(e))
 			await event.edit("Error :\n`{}`".format(str(e)))

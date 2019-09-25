@@ -55,14 +55,14 @@ async def _(event):
     await event.edit("""Telethon UserBot custom built by @amnd33p""")
 
 
-@borg.on(admin_cmd(pattern="gandu (.*)"))
+@borg.on(admin_cmd(pattern="help (.*)"))
 async def _(event):
     if event.fwd_from:
         return
     plugin_name = event.pattern_match.group(1)
     if plugin_name in borg._plugins:
         help_string = borg._plugins[plugin_name].__doc__
-        unload_string = f"Use `.unloda {plugin_name}` to remove this plugin.\n           © @amnd33p"
+        unload_string = f"Use `.uninstall {plugin_name}` to remove this plugin.\n           © @amnd33p"
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
         else:

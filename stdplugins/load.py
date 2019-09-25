@@ -208,16 +208,13 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-
             "🖤",
-
-            "❤️",
-
-            "🖤",
-
-            "❤️"
+            "💜",
+            "💙",
+            "💚",
+            "💛",
+            "🧡",
             "‎"
-
         ]
 
         for i in animation_ttl:

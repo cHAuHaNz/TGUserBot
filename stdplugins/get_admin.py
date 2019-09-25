@@ -9,7 +9,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**Admins in this Useless Group**: \n\n"
+    mentions = "**Admins in this Group**: \n\n"
     should_mention_admins = False
     reply_message = None
     pattern_match_str = event.pattern_match.group(1)
