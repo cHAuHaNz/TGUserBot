@@ -1,7 +1,7 @@
 {
-  "name": "PornHub",
-  "description": "Only For Legends..... By : @r4v4n4",
-  "logo": "https://telegra.ph/file/18cea3a9a7d9b3261dc1a.jpg",
+  "name": "TGUserBot",
+  "description": "Only For Legends..... By : @amnd33p",
+  "logo": "https://i.imgur.com/UNa7sDz.png",
   "keywords": [
     "sex",
     "porn",
@@ -12,7 +12,7 @@
   ],
   "repository": "https://gitlab.com/SpEcHiDe/UniBorg",
   "website": "https://telegram.dog/UniBorg",
-  "success_url": "https://telegram.dog/r4v4n4",
+  "success_url": "https://telegram.dog/amnd33p",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable environment variables.",
