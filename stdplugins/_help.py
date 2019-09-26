@@ -13,9 +13,8 @@ async def _(event):
     if splugin_name in borg._plugins:
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
-        s_help_string = "****:"
+        s_help_string = "use .info <module_name>"
     help_string = """**Custom Built By** @amnd33p ) \n**Verified Account**: ✅\n**Official Channel**: https://t.me/Xpl0iter\n
-
 **Custom Built Fork**: https://github.com/cHAuHaNz/TGUserBot/""".format(
         sys.version,
         __version__
@@ -62,7 +61,7 @@ async def _(event):
     plugin_name = event.pattern_match.group(1)
     if plugin_name in borg._plugins:
         help_string = borg._plugins[plugin_name].__doc__
-        unload_string = f"Use `.uninstall {plugin_name}` to remove this plugin.\n           © @amnd33p"
+        unload_string = f"Use `.uninstall {plugin_name}` to remove this plugin.\n   © @amnd33p"
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
         else:

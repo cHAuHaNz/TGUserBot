@@ -130,7 +130,7 @@ async def approve_p_m(event):
             else:
                 APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
     else:
-        APPROVED_PMs = "no Approved PMs (yet)"
+        APPROVED_PMs = "No Approved PMs (yet)"
     if len(APPROVED_PMs) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(APPROVED_PMs)) as out_file:
             out_file.name = "approved.pms.text"

@@ -31,7 +31,7 @@ async def _(event):
     if response_api:
         await event.edit("Generated {} for {}.".format(response_api, input_str))
     else:
-        await event.edit("something is wrong. please try again later.")
+        await event.edit("Something is wrong. please try again later.")
 
 
 @borg.on(admin_cmd("unshort (.*)"))
@@ -71,7 +71,7 @@ async def _(event):
     if response_api:
         await event.edit("**My Current ISP**{}\n{}".format(input_str, response_api))
     else:
-        await event.edit("i can't seem to find {} on the internet".format(input_str))
+        await event.edit("I can't seem to find {} on the internet".format(input_str))
 
 @borg.on(admin_cmd("mywho (.*)"))
 async def _(event):
@@ -95,7 +95,7 @@ async def _(event):
     if response_api:
         await event.edit("**Header**\n{}\n{}".format(input_str, response_api))
     else:
-        await event.edit("i can't seem to find {} on the internet".format(input_str))
+        await event.edit("I can't seem to find {} on the internet".format(input_str))
 
 @borg.on(admin_cmd("myup (.*)"))
 async def _(event):
@@ -107,7 +107,7 @@ async def _(event):
     if response_api:
         await event.edit("**Is Website Up????**\n{}\n{}".format(input_str, response_api))
     else:
-        await event.edit("i can't seem to find {} on the internet".format(input_str))
+        await event.edit("I can't seem to find {} on the internet".format(input_str))
 
 @borg.on(admin_cmd("fast(.*)"))
 async def _(event):

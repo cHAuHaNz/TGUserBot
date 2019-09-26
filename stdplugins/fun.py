@@ -15,13 +15,13 @@ METOOSTR = [
 ]
 RUNSREACTS = [
     "`Runs to Thanos`",
-    "`Runs to Modiji For Achey Din`",
+    "`Runs to Modiji For Achhey Din`",
     "`Runs far, far away from earth`",
-    "`Running faster than usian bolt coz I'mma Bot`",
+    "`Running faster than usian bolt coz I'm a Bot`",
     "`Runs to Marie`",
     "`This Group is too cancerous to deal with.`",
     "`Cya bois`",
-    "`I am a mad person. Plox Ban me.`",
+    "`I am a mad person. Pls Ban me.`",
     "`I go away`",
     "`I am just walking off, coz me is too fat.`",
     "`I Fugged off!`",
