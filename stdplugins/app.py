@@ -31,7 +31,7 @@ async def imdb(e):
         app_details += "\n<a href='"+app_icon+"'>&#8203;</a>')"
         app_details += "\n\n<b>Download : </b> <a href='http://t.me/Xpl0iter'>Request_Here</a>"
         app_details += "\n\n===> @Xpl0iter <==="
-        await e.edit(app_details, link_preview = True)
+        await e.edit(app_details, link_preview = True, parse_mode = 'HTML')
     except IndexError:
         await e.edit("No result found in search. Please enter **Valid app name**")
     except Exception as err:
