@@ -25,10 +25,10 @@ async def imdb(e):
         app_link = "https://play.google.com"+results[0].findNext('div', 'Vpfmgd').findNext('div', 'vU6FJ p63iDd').a['href']
         app_icon = results[0].findNext('div', 'Vpfmgd').findNext('div', 'uzcko').img['data-src']
         app_details = "<b>"+app_name+"</b>"
-        app_details += "\n<code>Developer :</code> <a href='"+app_dev_link+"'>"+app_dev+"</a>"
+        app_details += "<a href='"+app_icon+"'>&#8203;</a>"
+        app_details += "\n\n<code>Developer :</code> <a href='"+app_dev_link+"'>"+app_dev+"</a>"
         app_details += "\n<code>Rating :</code> "+app_rating.replace("Rated ", "⭐ ").replace(" out of ", "/").replace(" stars", "", 1).replace(" stars", "⭐ ").replace("five", "5")
-        app_details += "\n<code>Features :</code><a href='"+app_link+"'>View in Play Store</a>"
-        app_details += "\n<a href='"+app_icon+"'>&#8203;</a>"
+        app_details += "\n<code>Features :</code> <a href='"+app_link+"'>View in Play Store</a>"
         app_details += "\n\n<b>Download : </b> <a href='http://t.me/Xpl0iter'>Request_Here</a>"
         app_details += "\n\n===> @Xpl0iter <==="
         await e.edit(app_details, link_preview = True, parse_mode = 'HTML')
