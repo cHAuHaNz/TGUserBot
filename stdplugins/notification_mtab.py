@@ -244,7 +244,7 @@ async def on_new_channel_message(event):
                 # file=message_media,
                 silent=True
             )
-        except Exception  as e:
+        except Exception as e:
             await borg.send_message(
                 entity=Config.PRIVATE_GROUP_BOT_API_ID,
                 message=str(e),
