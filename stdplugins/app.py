@@ -26,7 +26,7 @@ async def imdb(e):
         app_icon = results[0].findNext('div', 'Vpfmgd').findNext('div', 'uzcko').img['data-src']
         app_details = app_name
         app_details += "\nDeveloper : ["+app_dev+"]("+app_dev_link+")"
-        app_details += "\nRating : "+app_rating.replace("Rated ", "⭐ ").replace(" out of ", "/").replace(" stars", "", 1).replace(" stars", "⭐ ").replace("five", "5"))
+        app_details += "\nRating : "+app_rating.replace("Rated ", "⭐ ").replace(" out of ", "/").replace(" stars", "", 1).replace(" stars", "⭐ ").replace("five", "5")
         app_details += "\n[View in Play Store]("+app_link+")"
         app_details += "\n[]("+app_icon+")"
         await e.edit(app_details, link_preview = True)

@@ -31,6 +31,7 @@ async def imdb(e):
             else:
               poster = ''
             if soup.find('div','title_wrapper'):
+              movie_title = soup.find('div','title_wrapper').findNext('h1').text
               pg = soup.find('div','title_wrapper').findNext('div').text
               mov_details = re.sub(r'\s+',' ',pg)
             else:
