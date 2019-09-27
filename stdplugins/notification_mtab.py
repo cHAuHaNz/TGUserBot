@@ -220,29 +220,40 @@ async def on_new_chat_action_message(event):
 
 @borg.on(events.Raw())
 async def on_new_channel_message(event):
-    if Config.PM_LOGGR_BOT_API_ID is None:
-        return
-    if tgbot is None:
-        return
-    # logger.info(event.stringify())
-    if isinstance(event, types.UpdateChannel):
-        channel_id = event.channel_id
-        message_id = 2
-        # someone added me to channel
-        # TODO: https://t.me/TelethonChat/153947
-        the_message = ""
-        the_message += "#MessageActionChatAddUser\n\n"
-        # the_message += f"[User](tg://user?id={added_by_user}): `{added_by_user}`\n"
-        the_message += f"[Private Link](https://t.me/c/{channel_id}/{message_id})\n"
-        await borg.send_message(
-            entity=Config.PM_LOGGR_BOT_API_ID,
-            message=the_message,
-            # reply_to=,
-            # parse_mode="html",
-            link_preview=False,
-            # file=message_media,
-            silent=True
-        )
+    try:
+        if Config.PM_LOGGR_BOT_API_ID is None:
+            return
+        if tgbot is None:
+            return
+        # logger.info(event.stringify())
+        if isinstance(event, types.UpdateChannel):
+            channel_id = event.channel_id
+            message_id = 2
+            # someone added me to channel
+            # TODO: https://t.me/TelethonChat/153947
+            the_message = ""
+            the_message += "#MessageActionChatAddUser\n\n"
+            # the_message += f"[User](tg://user?id={added_by_user}): `{added_by_user}`\n"
+            the_message += f"[Private Link](https://t.me/c/{channel_id}/{message_id})\n"
+            await borg.send_message(
+                entity=Config.PM_LOGGR_BOT_API_ID,
+                message=the_message,
+                # reply_to=,
+                # parse_mode="html",
+                link_preview=False,
+                # file=message_media,
+                silent=True
+            )
+        except Exception  as e:
+            await borg.send_message(
+                entity=Config.PRIVATE_GROUP_BOT_API_ID,
+                message=str(e),
+                # reply_to=,
+                # parse_mode="html",
+                link_preview=False,
+                silent=True
+            )
+
 
 
 """@borg.on(events.Raw())
