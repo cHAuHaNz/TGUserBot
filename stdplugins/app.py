@@ -29,7 +29,7 @@ async def imdb(e):
         app_details += "\nRating : "+app_rating.replace("Rated ", "⭐ ").replace(" out of ", "/").replace(" stars", "", 1).replace(" stars", "⭐ ").replace("five", "5"))
         app_details += "\n[View in Play Store]("+app_link+")"
         app_details += "\n[]("+app_icon+")"
-        await e.edit(app_details, link_preview = True , parse_mode = 'HTML')
+        await e.edit(app_details, link_preview = True)
     except IndexError:
         await e.edit("No result found in search. Please enter **Valid app name**")
     except Exception as err:
