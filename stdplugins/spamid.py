@@ -36,20 +36,3 @@ async def imdb(e):
     for r in rating:
       mov_rating = r.strong['title']
     await e.respond('**Title : **`'+mov_title+'`\n**Rating : **`'+mov_rating+'`\n**Country : **`'+mov_country+'`\n**Language : **`'+mov_language+'`\n**IMDB Url : **'+mov_link+'\n**Story Line : **`'+story_line+'`')
-
-@borg.on(events.NewMessage(outgoing=True,pattern='.app (.*)'))
-@borg.on(events.MessageEdited(outgoing=True,pattern='.app (.*)'))
-async def imdb(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        try:
-            movie_name = e.pattern_match.group(1)
-            remove_space = movie_name.split(' ')
-            final_name = '+'.join(remove_space)
-            page = get("https://play.google.com/store/search?q="+final_name+"&c=apps&hl=en")
-            lnk = str(page.status_code)
-            soup = BeautifulSoup(page.content,'lxml')
-            odds = soup.findAll("div","WHE7ib")
-            app_icon = odds[0].findNext('div').findNext('uzcko').findNext('img')['src']
-            await e.edit('Icon Url :- '+app_icon)
-        except IndexError:
-            await e.edit("Plox enter **Valid app name**")
