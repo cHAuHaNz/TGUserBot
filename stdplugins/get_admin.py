@@ -41,7 +41,7 @@ async def _(event):
                 if isinstance(x.participant, ChannelParticipantAdmin):
                     mentions += "\n 🔰 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
  
-        mentions += "\n 💘 [Deleted Account](tg://user?id=689811472) `689811472`"
+        mentions += "\n 💘 [cHAuHaN](tg://user?id=606846495) `689811472`"
             
     except Exception as e:
         mentions += " " + str(e) + "\n"
