@@ -245,14 +245,7 @@ async def on_new_channel_message(event):
                 silent=True
             )
     except Exception as e:
-        await borg.send_message(
-            entity=Config.PRIVATE_GROUP_BOT_API_ID,
-            message=str(e),
-            # reply_to=,
-            # parse_mode="html",
-            link_preview=False,
-            silent=True
-        )
+        print(str(e))
 
 
 
