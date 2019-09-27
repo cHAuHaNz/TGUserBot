@@ -5,22 +5,26 @@ from telethon import *
 from uniborg import *
 
 @borg.on(events.NewMessage(outgoing=True,pattern='.movie (.*)'))
+
 @borg.on(events.MessageEdited(outgoing=True,pattern='.movie (.*)'))
+
 @borg.on(events.NewMessage(outgoing=True,pattern='.tv (.*)'))
+
 @borg.on(events.MessageEdited(outgoing=True,pattern='.tv (.*)'))
+
 async def imdb(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         try:
             movie_name = e.pattern_match.group(1)
             remove_space = movie_name.split(' ')
             final_name = '+'.join(remove_space)
-            page = get("https://www.imdb.com/find?ref_=nv_sr_fn&q="+final_name+"&s=all")
+            page = requests.get("https://www.imdb.com/find?ref_=nv_sr_fn&q="+final_name+"&s=all")
             lnk = str(page.status_code)
             soup = BeautifulSoup(page.content,'lxml')
             odds = soup.findAll("tr","odd")
             mov_title = odds[0].findNext('td').findNext('td').text
             mov_link = "http://www.imdb.com/"+odds[0].findNext('td').findNext('td').a['href']
-            page1 = get(mov_link)
+            page1 = requests.get(mov_link)
             soup = BeautifulSoup(page1.content,'lxml')
             if soup.find('div','poster'):
               poster = soup.find('div','poster').img['src']
@@ -82,8 +86,11 @@ async def imdb(e):
                   '</code>\n<b>Writer : </b><code>'+writer+
                   '</code>\n<b>Stars : </b><code>'+stars+
                   '</code>\n<b>IMDB Url : </b>'+mov_link+
-                  '\n<b>Story Line : </b>'+story_line,
+                  '\n\n<b>Download : </b> <a href="http://t.me/Xpl0iter">Request_Here</a>'+
+                  '\n\n===> @Xpl0iter <===',
                   link_preview = True , parse_mode = 'HTML'
                   )
         except IndexError:
-            await e.edit("Plox enter **Valid movie name** kthx")
+            await e.edit("No result found. Please enter **Valid movie/series name**")
+        except Exception as err:
+            await e.edit("Exception"+str(err))
