@@ -22,4 +22,4 @@ async def imdb(e):
     except IndexError:
         await e.edit("No result found in search. Please enter **Valid app name**")
     except Exception as err:
-        await e.edit("Exception"+str(err))
+        await e.edit("Exception Occured:- "+str(err))

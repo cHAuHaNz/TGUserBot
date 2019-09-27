@@ -1,5 +1,5 @@
 import requests
-import bs4 
+import bs4
 import re
 from telethon import *
 from uniborg import *
@@ -20,12 +20,12 @@ async def imdb(e):
             final_name = '+'.join(remove_space)
             page = requests.get("https://www.imdb.com/find?ref_=nv_sr_fn&q="+final_name+"&s=all")
             lnk = str(page.status_code)
-            soup = BeautifulSoup(page.content,'lxml')
+            soup = bs4.BeautifulSoup(page.content,'lxml')
             odds = soup.findAll("tr","odd")
             mov_title = odds[0].findNext('td').findNext('td').text
             mov_link = "http://www.imdb.com/"+odds[0].findNext('td').findNext('td').a['href']
             page1 = requests.get(mov_link)
-            soup = BeautifulSoup(page1.content,'lxml')
+            soup = bs4.BeautifulSoup(page1.content,'lxml')
             if soup.find('div','poster'):
               poster = soup.find('div','poster').img['src']
             else:
@@ -93,4 +93,4 @@ async def imdb(e):
         except IndexError:
             await e.edit("No result found. Please enter **Valid movie/series name**")
         except Exception as err:
-            await e.edit("Exception"+str(err))
+            await e.edit("Exception Occured:- "+str(err))
