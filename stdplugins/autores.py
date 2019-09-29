@@ -19,7 +19,7 @@ async def on_snip(event):
         #    message_id = event.reply_to_msg_id
         await event.client.send_message(
             event.chat_id,
-            "Your request has been received, It will be fulfilled ASAP.\n'Please don't send a duplicate request within 3 days.'",
+            "Your request has been received, It will be fulfilled ASAP.\n`Please don't send a duplicate request within 3 days.`",
             reply_to=message_id
         )
 
