@@ -63,7 +63,7 @@ class Config(object):
     # Following plugins won't work on Heroku,
     # ⚡Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
     
-     = [
+    NO_LOAD = [
         "fwd",
         "antiflood",
         "blacklist",

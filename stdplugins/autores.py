@@ -1,4 +1,4 @@
-"""Notification Manager for @UniBorg
+"""Auto-responder for #Request by `cHAuHaN`
 .autores"""
 
 #regex ([a-zA-Z0-9 ]+)( #([r]|[R])equest)
