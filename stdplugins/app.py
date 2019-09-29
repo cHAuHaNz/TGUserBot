@@ -17,7 +17,6 @@ async def imdb(e):
         lnk = str(page.status_code)
         soup = bs4.BeautifulSoup(page.content,'lxml', from_encoding='utf-8')
         results = soup.findAll("div","WHE7ib mpg5gc")
-        print(results.__len__())
         app_name = results[0].findNext('div', 'Vpfmgd').findNext('div', 'WsMG1c nnK0zc').text
         app_dev = results[0].findNext('div', 'Vpfmgd').findNext('div', 'KoLSrc').text
         app_dev_link = "https://play.google.com"+results[0].findNext('div', 'Vpfmgd').findNext('a', 'mnKHRc')['href']

@@ -1,6 +1,6 @@
 """ command: .unzip
-coded by @By_Azade
-code rewritten my SnapDragon7410
+Provided by @amnd33p
+Code written my `cHAuHaN`
 """
 
 import asyncio

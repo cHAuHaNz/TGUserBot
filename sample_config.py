@@ -60,9 +60,10 @@ class Config(object):
     CHATS_TO_MONITOR_FOR_ANTI_FLOOD = []
     # specify LOAD and NO_LOAD
     LOAD = []
-    # foloowing plugins won't work on Heroku,
+    # Following plugins won't work on Heroku,
     # ⚡Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
-    NO_LOAD = [
+    
+     = [
         "fwd",
         "antiflood",
         "blacklist",
