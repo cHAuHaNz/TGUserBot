@@ -1,5 +1,5 @@
 """Auto-responder for #Request by `cHAuHaN`
-.autores"""
+"""
 
 #regex ([a-zA-Z0-9 ]+)( #([r]|[R])equest)($|[\n])
 
@@ -20,6 +20,11 @@ async def on_snip(event):
         await event.client.send_message(
             event.chat_id,
             "Your request has been received, It will be fulfilled ASAP.\n`Please don't send a duplicate request within 3 days.`",
+            reply_to=message_id
+        )
+        await event.client.send_message(
+            "-387693035",
+            "New Request Received :- `"+name+"`",
             reply_to=message_id
         )
 
