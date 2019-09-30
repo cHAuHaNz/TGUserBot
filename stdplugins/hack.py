@@ -22,7 +22,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "hack":
+    if input_str == "hackit":
         await event.edit(input_str)
         animation_chars = [
             "`Connecting To Hacked Private Server...`",
