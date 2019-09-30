@@ -23,7 +23,7 @@ async def on_snip(event):
             reply_to=message_id
         )
         await event.client.send_message(
-            "-387693035",
+            -387693035,
             "New Request Received :- `"+name+"`",
             reply_to=message_id
         )
