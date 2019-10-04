@@ -16,7 +16,7 @@ async def _(event):
 
         return
 
-    animation_interval = 0.1
+    animation_interval = 0.5
 
     animation_ttl = range(0, 101)
 
@@ -28,12 +28,12 @@ async def _(event):
 
         animation_chars = [
             "👉      ✊️",
-            "👉     ✊️",
-            "👉    ✊️",
-            "👉   ✊️",
-            "👉  ✊️",
-            "👉 ✊️",
-            "👉✊️💦"
+            "👉     ✊️ ",
+            "👉    ✊️  ",
+            "👉   ✊️   ",
+            "👉  ✊️    ",
+            "👉 ✊️     ",
+            "👉✊️💦    "
         ]
 
         for i in animation_ttl:
