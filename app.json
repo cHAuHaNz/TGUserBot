@@ -151,8 +151,8 @@
     "G_DRIVE_CLIENT_SECRET": {
       "description": "Get your credentials from https://da.gd/so63O",
       "required": false
-      },
-      "GDRIVE_FOLDER_ID": {
+    },
+    "GDRIVE_FOLDER_ID": {
       "description": "Get your gdrive folder link in which you want to save file.",
       "required": false
     },
