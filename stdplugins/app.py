@@ -4,6 +4,7 @@
 import requests
 import bs4 
 import re
+from uniborg.util import admin_cmd
 from telethon import *
 from uniborg import *
 
