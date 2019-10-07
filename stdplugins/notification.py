@@ -1,5 +1,5 @@
 """Notification Manager for @UniBorg
-.nccreatadch
+.nccreatedch
 .nolog
 .dellog
 .approvepm
@@ -28,8 +28,8 @@ UNIBORG_USER_BOT_NO_WARN = "Thank you for contacting me but i Am Offline Now, i 
 async def create_dump_channel(event):
     if Config.PM_LOGGR_BOT_API_ID is None:
         result = await borg(functions.channels.CreateChannelRequest(  # pylint:disable=E0602
-            title=f"UniBorg-{borg.uid}-PM_LOGGR_BOT_API_ID-data",
-            about="@UniBorg PM_LOGGR_BOT_API_ID // Do Not Touch",
+            title=f"UserBot-{borg.uid}-PM_LOGGR_BOT_API_ID-data",
+            about="UserBot PM_LOGGR_BOT_API_ID // Do Not Touch",
             megagroup=False
         ))
         logger.info(result)
