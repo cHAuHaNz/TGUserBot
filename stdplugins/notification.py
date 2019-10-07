@@ -252,7 +252,7 @@ async def _(event):
         return
     if tgbot is None:
         return
-    logger.info(event.stringify())
+    #logger.info(event.stringify())
 
 
 if tgbot is not None:
@@ -260,7 +260,7 @@ if tgbot is not None:
     async def _(event):
         if Config.PM_LOGGR_BOT_API_ID is None:
             return
-        logger.info(event.stringify())
+        #logger.info(event.stringify())
 
 
 async def do_pm_permit_action(chat_id, event):

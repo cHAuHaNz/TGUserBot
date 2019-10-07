@@ -8,7 +8,7 @@ from uniborg.util import admin_cmd
 from telethon import *
 from uniborg import *
 
-@borg.on(admin_cmd(pattern='.app (.*)', allow_sudo=True))
+@borg.on(pattern='.app (.*)', allow_sudo=True)
 
 @borg.on(events.MessageEdited(pattern='.app (.*)'))
 
@@ -39,7 +39,7 @@ async def apk(e):
     except Exception as err:
         await e.edit("Exception Occured:- "+str(err))
 
-@borg.on(admin_cmd(pattern='.appr (.*)', allow_sudo=True))
+@borg.on(pattern='.appr (.*)', allow_sudo=True)
 
 @borg.on(events.MessageEdited(pattern='.appr (.*)'))
 
