@@ -27,7 +27,7 @@ async def on_snip(event):
             "New Request Received :- `"+name+"`",
             reply_to=message_id
         )"""
-        msg = await event.message
+        msg = event.message
         if msg:
             msg_o = await event.client.forward_messages(
                 entity=-346103366,
