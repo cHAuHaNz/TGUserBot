@@ -8,9 +8,9 @@ from uniborg.util import admin_cmd
 from telethon import *
 from uniborg import *
 
-@borg.on(events.NewMessage(pattern='.app (.*)')
+@borg.on(events.NewMessage(pattern='.app (.*)'))
 
-@borg.on(events.MessageEdited(pattern='.app (.*)')
+@borg.on(events.MessageEdited(pattern='.app (.*)'))
 
 async def apk(e):
     try:
@@ -39,9 +39,9 @@ async def apk(e):
     except Exception as err:
         await e.edit("Exception Occured:- "+str(err))
 
-@borg.on(events.NewMessage(pattern='.appr (.*)')
+@borg.on(events.NewMessage(pattern='.appr (.*)'))
 
-@borg.on(events.MessageEdited(pattern='.appr (.*)')
+@borg.on(events.MessageEdited(pattern='.appr (.*)'))
 
 async def apkr(e):
     try:
