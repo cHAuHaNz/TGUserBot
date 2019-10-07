@@ -10,7 +10,7 @@ from uniborg import *
 
 @borg.on(admin_cmd(pattern='.app (.*)', allow_sudo=True))
 
-@borg.on(events.MessageEdited(pattern='.app (.*)', allow_sudo=True))
+@borg.on(events.MessageEdited(pattern='.app (.*)'))
 
 async def apk(e):
     try:
@@ -41,7 +41,7 @@ async def apk(e):
 
 @borg.on(admin_cmd(pattern='.appr (.*)', allow_sudo=True))
 
-@borg.on(events.MessageEdited(pattern='.appr (.*)', allow_sudo=True))
+@borg.on(events.MessageEdited(pattern='.appr (.*)'))
 
 async def apkr(e):
     try:
