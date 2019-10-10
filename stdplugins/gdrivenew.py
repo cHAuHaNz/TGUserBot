@@ -169,7 +169,7 @@ async def _(event):
         dir_link = "https://drive.google.com/folderview?id={}".format(dir_id)
         await mone.edit(f"[Here is your Google Drive link]({dir_link})")
     else:
-        await mone.edit(f"directory {input_str} does not seem to exist")
+        await mone.edit(f"Directory {input_str} does not seem to exist")
 
 
 @borg.on(admin_cmd(pattern="drive (delete|get) ?(.*)", allow_sudo=True))
@@ -227,7 +227,7 @@ async def _(event):
         storage = await create_token_file(G_DRIVE_TOKEN_FILE, event)
     http = authorize(G_DRIVE_TOKEN_FILE, storage)
     # Authorize, get file parameters, upload file and print out result URL for download
-    await mone.edit(f"searching for {input_str} in your gDrive ...")
+    await mone.edit(f"Searching for {input_str} in your gDrive ...")
     gsearch_results = await gdrive_search(http, input_str)
     await mone.edit(gsearch_results, link_preview=False, parse_mode="html")
 
@@ -282,7 +282,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
     media_body = MediaFileUpload(file_path, mimetype=mime_type, resumable=True)
     body = {
         "title": file_name,
-        "description": "Uploaded using @UniBorg gDrive v2",
+        "description": "Uploaded using TGUserbot by @amnd33p",
         "mimeType": mime_type,
     }
     if parent_id is not None:
@@ -309,7 +309,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
                 "".join(["░" for i in range(20 - math.floor(percentage / 5))]),
                 round(percentage, 2)
             )
-            current_message = f"uploading to gDrive\nFile Name: {file_name}\n{progress_str}"
+            current_message = f"Uploading to gDrive\nFile Name: {file_name}\n{progress_str}"
             if display_message != current_message:
                 try:
                     await event.edit(current_message)
@@ -369,7 +369,7 @@ async def DoTeskWithDir(http, input_directory, event, parent_id):
 async def gdrive_delete(service, file_id):
     try:
         service.files().delete(fileId=file_id).execute()
-        return f"successfully deleted {file_id} from my gDrive."
+        return f"Successfully Deleted {file_id} from my gDrive."
     except Exception as e:
         return str(e)
 

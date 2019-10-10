@@ -24,7 +24,7 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "ls -lh ./chauhan/"
+    cmd = "ls -lh ./downloads/"
 #    if dirname == tempdir:
 	
     reply_to_id = event.message.id
@@ -220,7 +220,7 @@ async def handler(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    pathtofile = f"./chauhan/{input_str}"
+    pathtofile = f"./downloads/{input_str}"
 
 	
     if os.path.isfile(pathtofile):

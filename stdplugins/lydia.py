@@ -1,4 +1,4 @@
-"""Lydia AI plugin for @UniBorg
+"""Lydia AI plugin for TGUserbot by @amnd33p
 
 .eai <as a reply to user's message //Turns AI on For that user.
 .dai <as a reply to user's message //Turns AI off For that user.
@@ -8,8 +8,6 @@ Description: A module that Act as a chatbot and chat with a User/other Bot.
 This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.
 This Module also Needs DB_URI For Storage of Some Data So make sure you have that too.
 """
-
-
 import coffeehouse as cf
 
 import asyncio
@@ -52,7 +50,7 @@ async def lydia_disable_enable(event):
                 for lydia_ai in lsts:
                     output_str += f"[user](tg://user?id={lydia_ai.user_id}) in chat `{lydia_ai.chat_id}`\n"
             else:
-                output_str = "no Lydia AI enabled users / chats. Start by replying `.enacf` to any user in any chat!"
+                output_str = "no Lydia AI enabled users / chats. Start by replying `.eai` to any user in any chat!"
             if len(output_str) > Config.MAX_MESSAGE_SIZE_LIMIT:
                 with io.BytesIO(str.encode(output_str)) as out_file:
                     out_file.name = "lydia_ai.text"

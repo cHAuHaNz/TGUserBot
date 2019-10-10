@@ -3,7 +3,6 @@ Contains code used by other kbass_* plugins
 """
 from uniborg import util
 
-
 async def get_target_message(borg, event):
     """
     If the event is a reply, returns the reply message if it's from us

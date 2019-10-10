@@ -1,4 +1,4 @@
-"""command: .sex"""
+"""command: .char"""
 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
@@ -7,7 +7,7 @@ from telethon import events
 import random
 import asyncio
 
-@borg.on(events.NewMessage(pattern=r"\.se(.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.char(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -45,7 +45,7 @@ async def _(event):
             "(‿ˠ‿)",
             "╰U╯☜(◉ɷ◉ )",
             "(;´༎ຶ益༎ຶ)♡",
-            "╭∩╮(︶ε︶*)chu",
+            "╭∩╮(︶ε︶*)",
             "( ＾◡＾)っ (‿|‿)",
         ]
     elif input_str in "love":
@@ -90,7 +90,7 @@ async def _(event):
     else:    
         emoticons = [
             "( ͡° ͜ʖ ͡°)",
-            "¯\_(ツ)_/¯",
+            "¯\\_(ツ)_/¯",
             "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)",
             "ʕ•ᴥ•ʔ",
             "(▀ Ĺ̯▀   )",
@@ -98,7 +98,7 @@ async def _(event):
             "༼ つ ◕_◕ ༽つ",
             "ಠ_ಠ",
             "(☞ ͡° ͜ʖ ͡°)☞",
-            "¯\_༼ ି ~ ି ༽_/¯",
+            "¯\\_༼ ି ~ ି ༽_/¯",
             "c༼ ͡° ͜ʖ ͡° ༽⊃",
         ]
     index = random.randint(0, len(emoticons))

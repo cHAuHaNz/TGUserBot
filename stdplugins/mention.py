@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) @INF1N17Y
-
+"""Mention anyone with cusom text.
+.mention <text>"""
 from telethon import events
 from uniborg.util import admin_cmd
 

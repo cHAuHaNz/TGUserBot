@@ -1,7 +1,7 @@
 """Rename Telegram Files
 Syntax:
-.rnupload file.name
-.rnstreamupload file.name
+.rnupload <file_name>
+.rnstreamupload <file_name>
 .rndlup """
 
 import asyncio

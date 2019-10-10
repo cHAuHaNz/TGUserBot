@@ -1,7 +1,6 @@
 """
 G-Drive File Downloader Plugin For Userbot. 
 usage: .gdl File-Link
-
 """
 import requests
 from telethon import events

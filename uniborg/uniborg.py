@@ -32,8 +32,8 @@ class Uniborg(TelegramClient):
         kwargs = {
             "api_id": 6,
             "api_hash": "eb06d4abfb49dc3eeb1aeb98ae0f581e",
-            "device_model": "Iphone XS Max",
-            "app_version": "@amnd33p",
+            "device_model": "iPhone Xs Max",
+            "app_version": "by @amnd33p",
             "lang_code": "en",
             **kwargs
         }

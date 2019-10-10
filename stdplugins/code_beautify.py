@@ -1,7 +1,4 @@
 # For @UniBorg
-# (c) <GNU/std::sakty_]> a.k.a. @sunda001
-
-
 from telethon import events
 import asyncio
 import requests
