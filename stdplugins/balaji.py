@@ -28,7 +28,7 @@ async def _(event):
 
         animation_chars = [
         
-            "`Your bot is running\n\nTelethon version:` 1.9.0\n`Python:` 3.7.3\n`User:` @r4v4n4\n`Database Status: Databases functioning normally!`",
+            "`Your bot is running\n\nTelethon version:` 1.9.0\n`Python:` 3.7.3\n`User:` @amnd33p\n`Database Status: Databases functioning normally!`",
             "`Connecting To github.com...`",
             "`Deleting Baalaji Repo....`",
             "`Forking Uniborg... 0%\n\n⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 0 MiB / 108.7 MiB`",

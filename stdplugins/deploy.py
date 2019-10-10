@@ -33,15 +33,15 @@ async def _(event):
         animation_chars = [
         
             "**Heroku Connecting To Latest Github Build (Pornhub)**",
-            "**Build started by user** @r4v4n4",
-            "**Deploy** `535a74f0` **by user** @r4v4n4",
+            "**Build started by user** @amnd33p",
+            "**Deploy** `535a74f0` **by user** @amnd33p",
             "**Restarting Heroku Server...**",
             "**State changed from up to starting**",    
             "**Stopping all processes with SIGTERM**",
             "**Process exited with** `status 143`",
             "**Starting process with command** `python3 -m stdborg`",
             "**State changed from starting to up**",
-            "__INFO:UniBorg:Logged in as 557667062__",
+            "__INFO:UniBorg:Logged in as 69696969__",
             "__INFO:UniBorg:Successfully loaded all plugins__",
             "**Build Succeeded**"
 
