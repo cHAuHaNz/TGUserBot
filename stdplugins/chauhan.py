@@ -2,7 +2,7 @@
 
 Available Commands:
 
-.ravana"""
+.chauhan"""
 
 from telethon import events
 

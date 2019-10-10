@@ -156,11 +156,11 @@
       "description": "Get your gdrive folder link in which you want to save file.",
       "required": false
     },
-    "AUTH_TOKEN_DATA": {
+    /*"AUTH_TOKEN_DATA": {
       "description": "This is required for gdrive to work. This might help: https://da.gd/authtoken ",
       "value": "blahblah",
       "required": false
-    },
+    },*/
     "DATA_DIRECTORY": {
       "description": "I dunno y is it for but it is necessary for my repo.",
       "value": "data",
