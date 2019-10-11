@@ -1,5 +1,4 @@
-""" @ukinti_bot
-Available Commands:
+"""Available Commands:
 .unbanall
 .kick option
 Available Options: d, y, m, w, o, q, r """
@@ -32,7 +31,7 @@ async def _(event):
             try:
                 await borg(functions.channels.EditBannedRequest(event.chat_id, i, rights))
             except FloodWaitError as ex:
-                logger.warn("sleeping for {} seconds".format(ex.seconds))
+                logger.warn("Sleeping for {} seconds".format(ex.seconds))
                 sleep(ex.seconds)
             except Exception as ex:
                 await event.edit(str(ex))

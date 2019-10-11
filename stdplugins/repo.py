@@ -9,7 +9,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**Link To The Custom Forked Repo:** https://github.com/cHAuHaNz/TGUserBot/ "
+    mentions = "**Link to this awesome userbot's repo:** https://github.com/cHAuHaNz/TGUserBot/ "
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""

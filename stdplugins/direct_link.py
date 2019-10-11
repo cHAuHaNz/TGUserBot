@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.b (the "License");
 # you may not use this file except in compliance with the License.
 #
-"""COMMAND : .direct"""
+"""COMMAND : .direct <url>"""
 
 from os import popen
 import re
@@ -29,7 +29,7 @@ async def direct_link_generator(request):
         elif textx:
             message = textx.text
         else:
-            await request.edit("`Usage: .direct <url> <url>`")
+            await request.edit("`Usage: .direct <url>`")
             return
         reply = ''
         links = re.findall(r'\bhttps?://.*\.\S+', message)
