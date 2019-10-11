@@ -30,6 +30,7 @@ async def _(event):
         for i in animation_ttl:
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i % 13])
+    animation_ttl = range(0, 12)
     if input_str == "hackit":
         await event.edit(input_str)
         animation_chars = [
