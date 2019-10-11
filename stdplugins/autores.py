@@ -1,5 +1,4 @@
-"""Auto-responder for #Request by `cHAuHaN`
-"""
+"""Auto-responder for #Request by `cHAuHaN`"""
 
 #regex ([a-zA-Z0-9 ]+)( #([r]|[R])equest)($|[\n])
 
