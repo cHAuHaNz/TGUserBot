@@ -90,7 +90,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 **Verified Account:** ✅
 **Official Channel:** https://t.me/Xpl0iter
 
-**Pithon 3.7.4 (default, Sep 12 2019, 01:19:52)** 
+**Python 3.7.4 (default, Sep 12 2019, 01:19:52)** 
 **[GCC 7.4.0]**
 **Telethon 1.10.3**
 
