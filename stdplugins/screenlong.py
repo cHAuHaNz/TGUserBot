@@ -14,7 +14,7 @@ async def _(event):
     if event.fwd_from:
         return
     if Config.GOOGLE_CHROME_BIN is None:
-        await event.edit("need to install Google Chrome. Module Stopping.")
+        await event.edit("Need to install Google Chrome. Module Stopping.")
         return
     await event.edit("Processing ...")
     start = datetime.now()
