@@ -3,7 +3,10 @@
 .square
 .up
 .round
-.heart"""
+.heart
+.plane
+.clock
+.tclock"""
 from telethon import events
 import asyncio
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -74,4 +77,49 @@ async def _(event):
         ]
         for i in animation_ttl:
             await asyncio.sleep(animation_interval)
-            await event.edit(animation_chars[i % 4])
+            await event.edit(animation_chars[i % 6])
+    if input_str == "plane":
+        await event.edit(input_str)
+        animation_chars = [
+            "✈-------------",
+            "-✈------------",
+            "--✈-----------",
+            "---✈----------",
+            "----✈---------",
+            "-----✈--------",
+            "------✈-------",
+            "-------✈------",
+            "--------✈-----", 
+            "---------✈----",
+            "----------✈---",
+            "-----------✈--",
+            "------------✈-",
+            "-------------✈"
+        ]
+        for i in animation_ttl:
+            await asyncio.sleep(animation_interval)
+            await event.edit(animation_chars[i % 14])
+    if input_str == "clock":
+        await event.edit(input_str)
+        animation_chars = [
+            "🕛",
+            "🕐",
+            "🕑",
+            "🕒",
+            "🕓",
+            "🕔",
+            "🕕",
+            "🕖",
+            "🕗",
+            "🕘",
+            "🕙"
+        ]
+        for i in animation_ttl:
+            await asyncio.sleep(animation_interval)
+            await event.edit(animation_chars[i % 11])
+    if input_str == "tclock":
+        deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛"))
+        for _ in range(48):
+            await asyncio.sleep(0.1)
+            await event.edit("".join(deq))
+            deq.rotate(1)
