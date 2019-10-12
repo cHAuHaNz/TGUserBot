@@ -66,11 +66,11 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == borg.uid and query.startswith("@UniBorg"):
+        if event.query.user_id == borg.uid and query.startswith("@amnd33p"):
             rev_text = query[::-1]
             buttons = paginate_help(0, borg._plugins, "helpme")
             result = builder.article(
-                "© @UniBorg",
+                "© @amnd33p",
                 text="{}\nℂ𝕦𝕣𝕣𝕖𝕟𝕥𝕝𝕪 𝕃𝕠𝕒𝕕𝕖𝕕 ℙ𝕝𝕦𝕘𝕚𝕟𝕤: {}".format(
                     query, len(borg._plugins)),
                 buttons=buttons,
@@ -78,31 +78,28 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         elif query.startswith("tb_btn"):
             result = builder.article(
-                "Button Parser © @UniBorg",
-                text=f"powered by @UniBorg",
+                "Button Parser © @amnd33p",
+                text=f"Powered by @amnd33p",
                 buttons=[],
                 link_preview=True
             )
         else:
             result = builder.article(
-                "© @UniBorg",
+                "© @amnd33p",
                 text="""@amnd33p **( Custom Built By** @amnd33p **)** 
 **Verified Account:** ✅
 **Official Channel:** https://t.me/Xpl0iter
 
-**Pithun 3.7.4 (default, Sep 12 2019, 01:19:52)** 
+**Pithon 3.7.4 (default, Sep 12 2019, 01:19:52)** 
 **[GCC 7.4.0]**
-**Talethrun 1.10.3**
+**Telethon 1.10.3**
 
 **Custom Built Fork:** https://github.com/cHAuHaNz/TGUserBot/""",
                 buttons=[
-                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/amnd33p"), custom.Button.url(
-                        "📼cHAuHaN's Content Channel📼", "https://t.me/Xpl0iter")],
-                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/cHAuHaNz/TGUserBot/"), custom.Button.url(
-                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F&template=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F")],
-                    [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
-                        "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
-                        "♻️Refresh Heroku♻️", "tg://chutiya")]
+                    [custom.Button.url("Creator👤", "https://telegram.dog/amnd33p"), custom.Button.url(
+                        "📼Channel📼", "https://t.me/Xpl0iter")],
+                    [custom.Button.url("👨‍💻Source👨‍💻", "https://github.com/cHAuHaNz/TGUserBot/"), custom.Button.url(
+                        "Deploy❗", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F&template=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F")]
                 ],
                 link_preview=False
             )
@@ -139,7 +136,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own @UniBorg, and don't edit my messages!"
+            reply_pop_up_alert = "Please get your own @amnd33p_bot, and don't edit my messages!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -153,7 +150,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         reply_pop_up_alert = help_string if help_string is not None else \
             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
         reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
-            © @r4v4n4".format(plugin_name)
+            © @amnd33p".format(plugin_name)
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
