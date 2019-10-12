@@ -4,8 +4,7 @@ from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 from uniborg.util import admin_cmd
 from telethon.errors.rpcerrorlist import (UserIdInvalidError,
-                                          MessageTooLongError)
-                                          
+                                          MessageTooLongError)                                      
 @borg.on(events.NewMessage(pattern=r"\.userlist ?(.*)", outgoing=True))
 async def get_users(show):
     """ For .userslist command, list all of the users of the chat. """
@@ -14,7 +13,7 @@ async def get_users(show):
             await show.edit("Are you sure this is a group?")
             return
         info = await show.client.get_entity(show.chat_id)
-        title = info.title if info.title else "this chat"
+        title = info.title if info.title else "This Chat"
         mentions = 'Users in {}: \n'.format(title)
         try:
             if not show.pattern_match.group(1):
