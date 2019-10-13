@@ -1,4 +1,4 @@
-"""Auto-responder for #Request by `cHAuHaN`"""
+"""Auto-responder for #Request by [cHAuHaN](http://t.me/amnd33p)"""
 
 #regex ([a-zA-Z0-9 ]+)( #([r]|[R])equest)($|[\n])
 
@@ -21,15 +21,10 @@ async def on_snip(event):
             "Your request has been received, It will be fulfilled ASAP.\n`Please don't send a duplicate request within 3 days.`",
             reply_to=message_id
         )
-        """await event.client.send_message(
-            -346103366,
-            "New Request Received :- `"+name+"`",
-            reply_to=message_id
-        )"""
         msg = event.message
         if msg:
             msg_o = await event.client.forward_messages(
-                entity=-346103366,
+                entity=Config.PRIVATE_GROUP_FOR_REQUESTS_ID,
                 messages=msg,
                 from_peer=event.chat_id,
                 silent=False
