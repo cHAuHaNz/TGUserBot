@@ -2,8 +2,6 @@
 .k, .kperu,.kthanos,.kchu,.khate,.kface, .kchase 
 \n\nPorted by @NeoMatrix90
 \nImproved by @amnd33p"""
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 from telethon import events
 import random
 import asyncio
@@ -37,14 +35,14 @@ async def _(event):
                         "`Uss Ne Hothon Se Chhu Kar Lowd* Pe Nasha Kar Diya; Lu*D Ki Baat To Aur Thi, Uss Ne To Jhato* Ko Bhi Khada Kar Diya!`",
                         ]
     elif input_str in "chua":
-		    emoticons = 
-                        "`Taare hai Asmaan me very very bright jaat na jla bskd dekh le apni hight.`",
-                        "`jindagi ki na toote lari iski lulli hoti nhi khadi`",
-                        "`Kbhi kbhi meri dil me khyaal ata hai ayse chutiyo ko kon paida kr jata hai😂.`",
-                        "`Saawan ka mahina pawan kare shor jake gand mara bskd kahi aur.`", 
-                        "`Dil ke armaa ansuon me beh jaye tum bskd ke chutiye hi reh gye.`",
-                        "`Ishq Se Tabiyat Ne Zeest Ka Mazaa aya maine is lodu ko randi khane me paya.`",
-                        "`Mirza galib ki yeh khani hai tu bhosdika hai yeh sab ki jubani hai.`",
+		    emoticons = [
+                        "`Taare hai Asmaan me very very bright`\n`Jhaat na jla bskd dekh le apni height.`",
+                        "`Zindagi ki na toote lari`\n`Iski lulli hoti nhi khadi`",
+                        "`Kbhi kbhi meri dil me khyaal ata hai`\n`Aise chutiyo ko kon paida kr jata hai😂.`",
+                        "`Saawan ka mahina pawan kare shor`\n`Jake gand mara bskd kahi aur.`", 
+                        "`Dil ke armaa aansuon me beh gye`\n`Tum bskd ke chutiye hi reh gye.`",
+                        "`Ishq Se Tabiyat Ne Zeest Ka Mazaa aya`\n`Maine is lodu ko randi khane me paya.`",
+                        "`Mirza galib ki yeh khani hai`\n`Tu bhosdika hai, yeh sab ki jubani hai.`",
                         ]
     elif input_str in "fuke":
            	emoticons = [
