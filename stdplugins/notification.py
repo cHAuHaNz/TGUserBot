@@ -244,8 +244,6 @@ async def on_new_channel_message(event):
             silent=True
         )
 
-
-
 @borg.on(events.Raw())
 async def _(event):
     if Config.PM_LOGGR_BOT_API_ID is None:
@@ -253,7 +251,6 @@ async def _(event):
     if tgbot is None:
         return
     #logger.info(event.stringify())
-
 
 if tgbot is not None:
     @tgbot.on(events.Raw())
@@ -293,7 +290,6 @@ async def do_pm_permit_action(chat_id, event):
     if chat_id in PREV_REPLY_MESSAGE:
         await PREV_REPLY_MESSAGE[chat_id].delete()
     PREV_REPLY_MESSAGE[chat_id] = r
-
 
 async def do_log_pm_action(chat_id, message_text, message_media):
     the_message = ""
