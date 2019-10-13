@@ -93,7 +93,7 @@ INSULT_STRINGS = [
 # ===========================================
                           
 
-@borg.on(admin_cmd("runs ?(.*)"))
+@borg.on(admin_cmd("runs"))
 async def _(event):
     if event.fwd_from:
          return
@@ -103,7 +103,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@borg.on(admin_cmd("metoo ?(.*)"))
+@borg.on(admin_cmd("metoo"))
 async def _(event):
     if event.fwd_from:
          return
@@ -113,7 +113,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@borg.on(admin_cmd("rape ?(.*)"))
+@borg.on(admin_cmd("rape"))
 async def _(event):
     if event.fwd_from:
          return
@@ -123,7 +123,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
                           
-@borg.on(admin_cmd("insult ?(.*)"))
+@borg.on(admin_cmd("insult"))
 async def _(event):
     if event.fwd_from:
          return
@@ -133,7 +133,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd("pro ?(.*)"))
+@borg.on(admin_cmd("pro"))
 async def _(event):
     if event.fwd_from:
          return
@@ -143,7 +143,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd("abuse ?(.*)"))
+@borg.on(admin_cmd("abuse"))
 async def _(event):
     if event.fwd_from:
          return
@@ -153,7 +153,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd("gey ?(.*)"))
+@borg.on(admin_cmd("gey"))
 async def _(event):
     if event.fwd_from:
          return
