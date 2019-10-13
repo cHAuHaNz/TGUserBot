@@ -98,7 +98,7 @@ async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(RUNSREACTS) - 1)    
-    input_str = event.pattern_match.group(1)
+    #input_str = event.pattern_match.group(1)
     reply_text = RUNSREACTS[bro]
     await event.edit(reply_text)
 
@@ -108,7 +108,7 @@ async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(METOOSTR) - 1)    
-    input_str = event.pattern_match.group(1)
+    #input_str = event.pattern_match.group(1)
     reply_text = METOOSTR[bro]
     await event.edit(reply_text)
 
@@ -118,7 +118,7 @@ async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(RAPE_STRINGS) - 1)    
-    input_str = event.pattern_match.group(1)
+    #input_str = event.pattern_match.group(1)
     reply_text = RAPE_STRINGS[bro]
     await event.edit(reply_text)
 			  
@@ -128,7 +128,7 @@ async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(INSULT_STRINGS) - 1)    
-    input_str = event.pattern_match.group(1)
+    #input_str = event.pattern_match.group(1)
     reply_text = INSULT_STRINGS[bro]
     await event.edit(reply_text)
 			  
@@ -137,8 +137,8 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
          return
-    bro = random.randint(0, len(PRO_STRINGS) - 1)    
-    input_str = event.pattern_match.group(1)
+    bro = random.randint(0, len(PRO_STRINGS) - 1)
+    #input_str = event.pattern_match.group(1)
     reply_text = PRO_STRINGS[bro]
     await event.edit(reply_text)
 			  
@@ -148,7 +148,7 @@ async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(ABUSE_STRINGS) - 1)    
-    input_str = event.pattern_match.group(1)
+    #input_str = event.pattern_match.group(1)
     reply_text = ABUSE_STRINGS[bro]
     await event.edit(reply_text)
 			  
@@ -158,6 +158,6 @@ async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(GEY_STRINGS) - 1)    
-    input_str = event.pattern_match.group(1)
+    #input_str = event.pattern_match.group(1)
     reply_text = GEY_STRINGS[bro]
     await event.edit(reply_text)                    
