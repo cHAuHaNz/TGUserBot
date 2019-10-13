@@ -1,5 +1,5 @@
 """Commands: 
-.k, .kperu,.kthanos,.kchu,.khate,.kface, .kchase 
+.x, .xperu,.xthanos,.xchu,.xhate,.xface, .xchase 
 \n\nPorted by @NeoMatrix90
 \nImproved by @amnd33p"""
 from telethon import events
