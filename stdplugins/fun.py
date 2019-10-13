@@ -1,4 +1,5 @@
-"""COMMAND : .runs , .metoo , .rape , .insult , .pro , .abuse , .gey"""
+"""COMMAND : .runs , .metoo , .rape , .insult , .pro , .abuse , .gey
+\nDebugged by @amnd33p"""
 
 from telethon import events
 import random, re
@@ -14,49 +15,49 @@ METOOSTR = [
     "`Same pinch bsdk`",
 ]
 RUNSREACTS = [
-    "`Runs to Thanos`",
-    "`Runs to Modiji For Achhey Din`",
-    "`Runs far, far away from earth`",
-    "`Running faster than usian bolt coz I'm a Bot`",
-    "`Runs to Marie`",
-    "`This Group is too cancerous to deal with.`",
-    "`Cya bois`",
-    "`I am a mad person. Pls Ban me.`",
-    "`I go away`",
-    "`I am just walking off, coz me is too fat.`",
-    "`I Fugged off!`",
+		   "`Runs to Thanos`",
+		   "`Runs to Modiji For Achhey Din`",
+		   "`Runs far, far away from earth`",
+		   "`Running faster than usian bolt coz I'm a Bot`",
+		   "`Runs to Marie`",
+		   "`This Group is too cancerous to deal with.`",
+		   "`Cya bois`",
+		   "`I am a mad person. Pls Ban me.`",
+		   "`I go away`",
+		   "`I am just walking off, coz me is too fat.`",
+		   "`I Fugged off!`",
 ]
 RAPE_STRINGS = [
-     "`Rape Done Drink The Cum`",
-     "`The user has been successfully raped`",
-     "`Dekho Bhaiyya esa hai! Izzat bachailo apni warna Gaand maar lenge tumhari`",
-     "`Relax your Rear, ders nothing to fear,The Rape train is finally here`",
-     "`Rape coming... Raped! haha 😆`",
-     "`Lodu Andha hai kya Yaha tera rape ho raha hai aur tu abhi tak yahi gaand mara raha hai lulz`",
+		   "`Rape Done Drink The Cum`",
+		   "`The user has been successfully raped`",
+		   "`Dekho Bhaiyya esa hai! Izzat bachailo apni warna Gaand maar lenge tumhari`",
+		   "`Relax your Rear, ders nothing to fear,The Rape train is finally here`",
+		   "`Rape coming... Raped! haha 😆`",
+		   "`Lodu Andha hai kya Yaha tera rape ho raha hai aur tu abhi tak yahi gaand mara raha hai lulz`",
 ] 
 ABUSE_STRINGS = [
-       "`Madharchod`",
-	   "`Gaandu`",
-	   "`Chutiya he rah jaye ga`",
-	   "`Ja be Gaandu`",
-	   "`Ma ka Bhodsa madharchod`",
-	   "`mml`",
-	   "`You MotherFukcer`",
-           "`You Betichod`",
-           "`you are lodu no.1`"
-	   "`Muh Me Lega Bhosdike ?`"
+		   "`Madharchod`",
+		   "`Gaandu`",
+		   "`Chutiya he rah jaye ga`",
+		   "`Ja be Gaandu`",
+		   "`Ma ka Bhodsa madharchod`",
+		   "`mml`",
+		   "`You MotherFukcer`",
+		       "`You Betichod`",
+		       "`you are lodu no.1`"
+		   "`Muh Me Lega Bhosdike ?`"
 ]
 GEY_STRINGS = [
-     "`you gey bsdk`",
-     "`you gey`",
-     "`you gey in the house`",
-     "`you chakka`",
-     "`you gey gey gey gey gey gey gey gey`",
-     "`you gey go away`",
+            "`you gey bsdk`",
+            "`you gey`",
+            "`you gey in the house`",
+            "`you chakka`",
+            "`you gey gey gey gey gey gey gey gey`",
+            "`you gey go away`",
 ]
 PRO_STRINGS = [
-     "`This gey is pro as phack.`",
-     "`Pros here -_- Time to Leave`",
+		"`This gey is pro as phack.`",
+		"`Pros here -_- Time to Leave`",
 ]
 INSULT_STRINGS = [ 
     "`Owww ... Such a stupid idiot.`",
@@ -89,74 +90,72 @@ INSULT_STRINGS = [
     "`When your mom dropped you off at the school, she got a ticket for littering.`",
     "`You’re so ugly that when you cry, the tears roll down the back of your head…just to avoid your face.`",
     "`If you’re talking behind my back then you’re in a perfect position to kiss my a**!.`",
-]
-# ===========================================
-                          
+]		                     
 
-@borg.on(admin_cmd("runs"))
+@borg.on(admin_cmd("runs($)"))
 async def _(event):
     if event.fwd_from:
-         return
+		    return
     bro = random.randint(0, len(RUNSREACTS) - 1)    
     #input_str = event.pattern_match.group(1)
     reply_text = RUNSREACTS[bro]
     await event.edit(reply_text)
 
 
-@borg.on(admin_cmd("metoo"))
+@borg.on(admin_cmd("metoo($)"))
 async def _(event):
     if event.fwd_from:
-         return
+		    return
     bro = random.randint(0, len(METOOSTR) - 1)    
     #input_str = event.pattern_match.group(1)
     reply_text = METOOSTR[bro]
     await event.edit(reply_text)
 
 
-@borg.on(admin_cmd("rape"))
+@borg.on(admin_cmd("rape($)"))
 async def _(event):
     if event.fwd_from:
-         return
+		    return
     bro = random.randint(0, len(RAPE_STRINGS) - 1)    
     #input_str = event.pattern_match.group(1)
     reply_text = RAPE_STRINGS[bro]
     await event.edit(reply_text)
 			  
-                          
-@borg.on(admin_cmd("insult"))
+		                     
+@borg.on(admin_cmd("insult($)"))
 async def _(event):
     if event.fwd_from:
-         return
+		    return
     bro = random.randint(0, len(INSULT_STRINGS) - 1)    
     #input_str = event.pattern_match.group(1)
     reply_text = INSULT_STRINGS[bro]
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd("pro"))
+@borg.on(admin_cmd("pro($)"))
 async def _(event):
     if event.fwd_from:
-         return
+		    return
     bro = random.randint(0, len(PRO_STRINGS) - 1)
     #input_str = event.pattern_match.group(1)
     reply_text = PRO_STRINGS[bro]
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd("abuse"))
+@borg.on(admin_cmd("abuse($)"))
 async def _(event):
     if event.fwd_from:
-         return
+		    return
     bro = random.randint(0, len(ABUSE_STRINGS) - 1)    
     #input_str = event.pattern_match.group(1)
     reply_text = ABUSE_STRINGS[bro]
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd("gey"))
+@borg.on(admin_cmd("gey($)"))
 async def _(event):
     if event.fwd_from:
-         return
+		    return
     bro = random.randint(0, len(GEY_STRINGS) - 1)    
     #input_str = event.pattern_match.group(1)
     reply_text = GEY_STRINGS[bro]
