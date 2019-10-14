@@ -120,8 +120,7 @@ async def _(event):
             deq.rotate(1)
     if input_str == "🍎":
         animation_chars = [
-                        " ‏‏‎ ",
-                        "                🍎",
+                        " ‏‏‎               🍎",
                         "            🍎 🍎",
                         "        🍎 🍎 🍎",
                         "    🍎 🍎 🍎 🍎",

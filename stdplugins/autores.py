@@ -1,4 +1,6 @@
-"""Auto-responder for #Request by [cHAuHaN](http://t.me/amnd33p)"""
+"""Auto-responder for #Request 
+
+  © [cHAuHaN](http://t.me/amnd33p)"""
 
 #regex ([a-zA-Z0-9 ]+)( #([r]|[R])equest)($|[\n])
 

@@ -1,7 +1,7 @@
 """Upload images to Labstack
 .labstack <path_to_image>
 .labstack as reply to media
- Ported by © [cHAuHaN](http://t.me/amnd33p)"""
+Ported by © [cHAuHaN](http://t.me/amnd33p)"""
 from datetime import datetime
 import os
 import requests
@@ -34,7 +34,7 @@ async def labstack(event):
     files2 = {"ttl":604800,"files":[{"name": filename, "type": "", "size": filesize}]}
     r2 = requests.post("https://up.labstack.com/api/v1/links", json=files2, headers=headers2)
     r2json = json.loads(r2.text)
-    url = "https://up.labstack.com/api/v1/links/47WoxzRr/send".format(r2json['code'])
+    url = "https://up.labstack.com/api/v1/links/{}/send".format(r2json['code'])
     max_days = 7
     command_to_exec = [
         "curl",
@@ -52,5 +52,5 @@ async def labstack(event):
         return
     else:
         logger.info(t_response)
-        t_response_arry = "https://up.labstack.com/api/v1/links/47WoxzRr/receive".format(r2json['code'])
+        t_response_arry = "https://up.labstack.com/api/v1/links/{}/receive".format(r2json['code'])
     await event.edit(t_response_arry + "\nMax Days:" + str(max_days), link_preview=False)
