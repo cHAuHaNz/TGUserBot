@@ -86,18 +86,17 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "© @amnd33p",
-                text="""@amnd33p **( Custom Built By** @amnd33p **)** 
-**Verified Account:** ✅
-**Official Channel:** https://t.me/Xpl0iter
-
-**Python 3.7.4 (default, Sep 12 2019, 01:19:52)** 
-**[GCC 7.4.0]**
-**Telethon 1.10.3**
-
-**Custom Built Fork:** https://github.com/cHAuHaNz/TGUserBot/""",
+                text="""**Custom Built TGUserbot By** @amnd33p
+                        **Verified Account:** ✅
+                        **Official Channel:** https://t.me/Xpl0iter
+                        
+                        **Python 3.7.4 (default, Sep 12 2019, 01:19:52)** 
+                        **[GCC 7.4.0]**
+                        **Telethon 1.10.3**
+                        
+                        **Custom Built Fork:** https://github.com/cHAuHaNz/TGUserBot/""",
                 buttons=[
-                    [custom.Button.url("Creator👤", "https://telegram.dog/amnd33p"), custom.Button.url(
-                        "📼Channel📼", "https://t.me/Xpl0iter")],
+                    [custom.Button.url("Creator👤", "https://telegram.dog/amnd33p"), custom.Button.url("📼Channel📼", "https://t.me/Xpl0iter")],
                     [custom.Button.url("👨‍💻Source👨‍💻", "https://github.com/cHAuHaNz/TGUserBot/"), custom.Button.url(
                         "Deploy❗", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F&template=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F")]
                 ],
@@ -136,7 +135,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own @amnd33p_bot, and don't edit my messages!"
+            reply_pop_up_alert = "Please get your own @Uniborg, and don't edit my messages!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 

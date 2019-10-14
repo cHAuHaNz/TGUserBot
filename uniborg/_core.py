@@ -23,6 +23,7 @@ async def load_reload(event):
         # pylint:disable=E0602
         logger.warn(f"Failed to (re)load plugin {shortname}: {trace_back}")
         await event.respond(f"Failed to (re)load plugin {shortname}: {e}")
+
 @borg.on(util.admin_cmd(pattern="(?:uninstall|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
 async def remove(event):
     await event.delete()
@@ -36,6 +37,7 @@ async def remove(event):
         msg = await event.respond(f"Plugin {shortname} is not loaded...")
     await asyncio.sleep(DELETE_TIMEOUT)
     await msg.delete()
+
 @borg.on(util.admin_cmd(pattern="send plugin (?P<shortname>\w+)$"))  # pylint:disable=E0602
 async def send_plug_in(event):
     if event.fwd_from:
@@ -56,6 +58,7 @@ async def send_plug_in(event):
     await event.edit("Uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
+    
 @borg.on(util.admin_cmd(pattern="install plugin"))  # pylint:disable=E0602
 async def install_plug_in(event):
     if event.fwd_from:

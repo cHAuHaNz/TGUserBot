@@ -1,7 +1,7 @@
 """Fetch App Details from Playstore.
 .apk <app_name> to fetch app details.
 .apkr <app_name>  to fetch app details with Xpl0iter request link.
-  © @amnd33p
+  © [cHAuHaN](http://t.me/amnd33p)
 """
 import requests
 import bs4 

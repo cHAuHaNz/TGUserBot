@@ -1,4 +1,5 @@
-"""command: .hack, .hackit"""
+"""Command: .hack, .hackit
+  © [cHAuHaN](http://t.me/amnd33p)"""
 
 from telethon import events
 import asyncio
@@ -24,7 +25,7 @@ async def _(event):
             "`Hacking... 84%\n█████████████████████▒▒▒▒ `",
             "`Hacking... 95%\n████████████████████████▒ `",
             "`Hacking... 100%\n█████████HACKED██████████ `",
-            "`Targeted Account Hacked...`\n\n`Join` [Xploit Army](http://t.me/Xpl0iter) `'s Private Group to Remove This Hack`",
+            "`Targeted Account Hacked...`\n\n`Join` [Xploit Army](http://t.me/Xpl0iter)`'s Private Group to Remove This Hack`",
             ""
         ]
         for i in animation_ttl:
