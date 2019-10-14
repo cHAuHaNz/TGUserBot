@@ -1,4 +1,8 @@
 """Available Commands:
+.hilao // 👉✊️💦 ,
+.sex // 🤵👼👰,
+.kiss // 🤵💋👰
+.🍎 to print a stack of 🍎
 .loading
 .square
 .up
@@ -7,7 +11,7 @@
 .plane
 .clock
 .tclock
-.🍎 to print a stack of 🍎"""
+  © [cHAuHaN](http://t.me/amnd33p)"""
 from telethon import events
 import asyncio
 import time
@@ -131,3 +135,56 @@ async def _(event):
             msg += s+"\n"
             await event.edit(msg)
             await asyncio.sleep(0.5)
+
+    animation_interval = 0.2
+    animation_ttl = range(1, 44)
+    input_str = event.pattern_match.group(1)
+    if input_str == "hilao":
+        animation_chars = [
+            "👉 ‏‏‎  ‏‏‎ ✊️",
+            "👉 ‏‏‎ ✊️ ‏‏‎ ",
+            "👉✊️ ‏‏‎  ‏‏‎ ",
+            "👉 ‏‏‎ ✊️ ‏‏‎ ",
+            "👉 ‏‏‎  ‏‏‎ ✊️",
+            "👉 ‏‏‎ ✊️ ‏‏‎ ",
+            "👉✊️ ‏‏‎  ‏‏‎ ",
+            "👉 ‏‏‎ ✊️ ‏‏‎ ",
+            "👉 ‏‏‎  ‏‏‎ ✊️",
+            "👉 ‏‏‎ ✊️ ‏‏‎ ",
+            "👉✊️💦 ‏‏‎ "
+        ]
+        for i in animation_ttl:
+            await asyncio.sleep(animation_interval)
+            await event.edit(animation_chars[i % 11])
+    animation_ttl = range(1, 40)
+    input_str = event.pattern_match.group(1)
+    if input_str == "sex":
+        animation_chars = [
+            "🤵 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ 👰",
+            "🤵 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ 👰 ‏‏‎ ",
+            "🤵 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ 👰 ‏‏‎  ‏‏‎ ",
+            "🤵 ‏‏‎  ‏‏‎  ‏‏‎ 👰 ‏‏‎  ‏‏‎  ‏‏‎ ",
+            "🤵 ‏‏‎  ‏‏‎ 👰 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ ",
+            "🤵 ‏‏‎ 👰 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ ",
+            "🤵👰 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ ",
+            "🤵👼👰 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ "
+        ]
+        for i in animation_ttl:
+            await asyncio.sleep(animation_interval)
+            await event.edit(animation_chars[i % 8])
+    animation_ttl = range(1, 40)
+    input_str = event.pattern_match.group(1)
+    if input_str == "kiss":
+        animation_chars = [
+            "🤵 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ 👰",
+            "🤵 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ 👰 ‏‏‎ ",
+            "🤵 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ 👰 ‏‏‎  ‏‏‎ ",
+            "🤵 ‏‏‎  ‏‏‎  ‏‏‎ 👰 ‏‏‎  ‏‏‎  ‏‏‎ ",
+            "🤵 ‏‏‎  ‏‏‎ 👰 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ ",
+            "🤵 ‏‏‎ 👰 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ ",
+            "🤵👰 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ ",
+            "🤵💋👰 ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ "
+        ]
+        for i in animation_ttl:
+            await asyncio.sleep(animation_interval)
+            await event.edit(animation_chars[i % 8])    
