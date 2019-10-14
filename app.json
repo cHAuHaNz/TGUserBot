@@ -49,7 +49,7 @@
       "required": false
     },
     "PRIVATE_GROUP_FOR_REQUESTS_ID": {
-      "description": "Send .g_id in any channel to fill this value.",
+      "description": "Send .g_id in any channel to fill this value. All the requests with #requests will be forwarded to this group.",
       "value": "-100",
       "required": false
     },"TMP_DOWNLOAD_DIRECTORY": {
