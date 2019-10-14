@@ -1,8 +1,8 @@
 """Upload images to Labstack
 .labstack <path_to_image>
 .labstack as reply to media
- Ported by © [cHAuHaN](http://t.me/amnd33p)
-"""from datetime import datetime
+ Ported by © [cHAuHaN](http://t.me/amnd33p)"""
+from datetime import datetime
 import os
 import requests
 import subprocess
