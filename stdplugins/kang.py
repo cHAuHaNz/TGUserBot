@@ -156,7 +156,7 @@ async def _(event):
                      f"**Emojis In Pack:** {' '.join(pack_emojis)}")
 
 
-@borg.on(admin_cmd("loda ?(.*)"))
+@borg.on(admin_cmd("getsticker ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

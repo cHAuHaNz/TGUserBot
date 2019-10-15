@@ -26,12 +26,12 @@ async def _(event):
         await borg.send_file(
             event.chat_id,
             caption="""Name: [{}]({})
-Type: {}
-Company: {}
-Blog: {}
-Location: {}
-Bio: {}
-Profile Created: {}""".format(name, html_url, gh_type, company, blog, location, bio, created_at),
+                        Type: {}
+                        Company: {}
+                        Blog: {}
+                        Location: {}
+                        Bio: {}
+                        Profile Created: {}""".format(name, html_url, gh_type, company, blog, location, bio, created_at),
             file=avatar_url,
             force_document=False,
             allow_cache=False,

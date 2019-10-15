@@ -77,7 +77,7 @@
     },
     "TELEGRAPH_SHORT_NAME": {
       "description": "This is required for the @telegraph functionality.",
-      "value": "LUCIFERTHEKING",
+      "value": "JoinXpl0iter",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
@@ -162,7 +162,7 @@
     },
     "AUTH_TOKEN_DATA": {
       "description": "This is required for gdrive to work. This might help: https://da.gd/authtoken ",
-      "value": "blahblah",
+      "value": "You need to get an access token. Contact @amnd33p, he might you help if he's free.",
       "required": false
     },
     "DATA_DIRECTORY": {

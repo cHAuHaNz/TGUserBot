@@ -77,7 +77,7 @@ async def _(event):
             "‎"
         ]
         for i in animation_ttl:
-            await asyncio.sleep(animation_interval)
+            await asyncio.sleep(0.4)
             await event.edit(animation_chars[i % 6])
     if input_str == "plane":
         animation_chars = [

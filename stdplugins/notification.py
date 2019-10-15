@@ -1,10 +1,13 @@
 """Notification Manager for @UniBorg
+.approvepm to approve PMs
+.blockpm to block PMs
+.block to block PMs and user
 .nccreatedch
 .nolog
 .dellog
-.approvepm
-.blockpm
-.listapprovedpms"""
+.listapprovedpms
+
+Modded by [cHAuHaN](http://t.me/amnd33p)"""
 
 import asyncio
 import io
@@ -114,7 +117,23 @@ async def approve_p_m(event):
                 pmpermit_sql.disapprove(chat.id)
                 await event.edit("███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nPM's Blocked Successfully...")
                 await asyncio.sleep(30)
+
+@borg.on(admin_cmd(pattern="block ?(.*)"))
+async def approve_p_m(event):
+    if event.fwd_from:
+        return
+    reason = event.pattern_match.group(1)
+    chat = await event.get_chat()
+    if Config.PM_LOGGR_BOT_API_ID is not None:
+        if event.is_private:
+            if pmpermit_sql.is_approved(chat.id):
+                pmpermit_sql.disapprove(chat.id)
+                await event.edit("███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nPM's Blocked Successfully...")
+                await asyncio.sleep(30)
                 await borg(functions.contacts.BlockRequest(chat.id))
+                await event.edit("User Blocked Successfully...")
+                
+
 
 
 @borg.on(admin_cmd(pattern="listapprovedpms"))
