@@ -1,6 +1,6 @@
 """Make / Download Telegram Sticker Packs without installing Third Party applications
 Available Commands:
-.kang [Optional Emoji]
+.rape [Optional Emoji to assign to that sticker]
 .packinfo
 .getsticker"""
 from telethon import events
@@ -29,26 +29,26 @@ from telethon.tl.types import (
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("kang ?(.*)"))
+@borg.on(admin_cmd("rape ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit("Reply to a photo to add to my personal sticker pack.")
+        await event.edit("Reply to a photo/sticker to add to your personal sticker pack.")
         return
     reply_message = await event.get_reply_message()
-    sticker_emoji = "🍆"
+    sticker_emoji = "🌁"
     input_str = event.pattern_match.group(1)
     if input_str:
         sticker_emoji = input_str
 
     me = borg.me
     userid = event.from_id
-    packname = f"@Xpl0iter's Owner"
+    packname = f"Join @Xpl0iter"
     packshortname = f"cHAuHaNz{userid}"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "_cHAuHaNz_Sticker.png"
+    file_ext_ns_ion = "cHAuHaNz_Sticker.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
@@ -65,7 +65,7 @@ async def _(event):
             sticker.seek(0)
             uploaded_sticker = await borg.upload_file(sticker, file_name=file_ext_ns_ion)
 
-    await event.edit("Aham Brahmasmi................")
+    await event.edit("Aham Brahmasmi.............")
 
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
@@ -117,7 +117,7 @@ async def _(event):
             await silently_send_message(bot_conv, sticker_emoji)
             await silently_send_message(bot_conv, "/done")
 
-    await event.edit(f"This Sticker Is Raped! Rape can be found [here](t.me/addstickers/{packshortname})")
+    await event.edit(f"This Sticker Is Raped by [cHAuHaN](http://t.me/amnd33p)! Rape can be found [here](t.me/addstickers/{packshortname}).")
 
 
 @borg.on(admin_cmd("packinfo"))
@@ -134,7 +134,7 @@ async def _(event):
     stickerset_attr_s = rep_msg.document.attributes
     stickerset_attr = find_instance(stickerset_attr_s, DocumentAttributeSticker)
     if not stickerset_attr.stickerset:
-        await event.edit("sticker does not belong to a pack.")
+        await event.edit("Sticker does not belong to a pack.")
         return
     get_stickerset = await borg(
         GetStickerSetRequest(
@@ -165,7 +165,6 @@ async def _(event):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
-        # https://gist.github.com/udf/e4e3dbb2e831c8b580d8fddd312714f7
         if not reply_message.sticker:
             return
         sticker = reply_message.sticker
@@ -178,15 +177,11 @@ async def _(event):
         file_caption = "Sticker Pack Saved"
         if is_a_s:
             file_ext_ns_ion = "tgs"
-            file_caption = "Forward the ZIP file to @AnimatedStickersRoBot to get lottIE JSON containing the vector information."
+            file_caption = "Forward the ZIP file to @AnimatedStickersRoBot to get lottie JSON containing the vector information."
         sticker_set = await borg(GetStickerSetRequest(sticker_attrib.stickerset))
         pack_file = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, sticker_set.set.short_name, "pack.txt")
         if os.path.isfile(pack_file):
             os.remove(pack_file)
-        # Sticker emojis are retrieved as a mapping of
-        # <emoji>: <list of document ids that have this emoji>
-        # So we need to build a mapping of <document id>: <list of emoji>
-        # Thanks, Durov
         emojis = defaultdict(str)
         for pack in sticker_set.packs:
             for document_id in pack.documents:
@@ -212,8 +207,7 @@ async def _(event):
                 pass
             if not pending_tasks:
                 break
-        await event.edit("Downloading to my local completed")
-        # https://gist.github.com/udf/e4e3dbb2e831c8b580d8fddd312714f7
+        await event.edit("Downloading to server completed.")
         directory_name = Config.TMP_DOWNLOAD_DIRECTORY + sticker_set.set.short_name
         zipf = zipfile.ZipFile(directory_name + ".zip", "w", zipfile.ZIP_DEFLATED)
         zipdir(directory_name, zipf)
@@ -232,14 +226,11 @@ async def _(event):
             os.remove(directory_name)
         except:
             pass
-        await event.edit("task Completed")
+        await event.edit("Task Completed")
         await asyncio.sleep(3)
         await event.delete()
     else:
         await event.edit("TODO: Not Implemented")
-
-
-# Helpers
 
 def is_it_animated_sticker(message):
     try:
@@ -254,7 +245,6 @@ def is_it_animated_sticker(message):
     except:
         return False
 
-
 def is_message_image(message):
     if message.media:
         if isinstance(message.media, MessageMediaPhoto):
@@ -265,13 +255,11 @@ def is_message_image(message):
         return False
     return False
 
-
 async def silently_send_message(conv, text):
     await conv.send_message(text)
     response = await conv.get_response()
     await conv.mark_read(message=response)
     return response
-
 
 async def stickerset_exists(conv, setname):
     try:
@@ -285,11 +273,8 @@ async def stickerset_exists(conv, setname):
     except StickersetInvalidError:
         return False
 
-
 def resize_image(image, save_locaton):
-    """ Copyright Rhyse Simpson:
-        https://github.com/skittles9823/SkittBot/blob/master/tg_bot/modules/stickers.py
-    """
+    """Copyright Rhyse Simpson: https://github.com/skittles9823/SkittBot/blob/master/tg_bot/modules/stickers.py"""
     im = Image.open(image)
     maxsize = (512, 512)
     if (im.width and im.height) < 512:
@@ -311,17 +296,14 @@ def resize_image(image, save_locaton):
         im.thumbnail(maxsize)
     im.save(save_locaton, "PNG")
 
-
 def progress(current, total):
     logger.info("Uploaded: {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
-
 
 def find_instance(items, class_or_tuple):
     for item in items:
         if isinstance(item, class_or_tuple):
             return item
     return None
-
 
 def zipdir(path, ziph):
     # ziph is zipfile handle
