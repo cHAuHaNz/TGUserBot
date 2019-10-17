@@ -76,6 +76,8 @@ class Config(object):
         "welcome_old",
         "gban"
     ]
+    # Set to True if you want to enable #request response.
+    ENABLE_REQUESTS_RECEIVER = bool(os.environ.get("ENABLE_REQUESTS_RECEIVER", False))
     # Get your own API key from https://www.remove.bg/ or
     # feel free to use http://telegram.dog/Remove_BGBot
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)

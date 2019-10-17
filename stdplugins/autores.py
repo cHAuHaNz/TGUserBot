@@ -13,6 +13,8 @@ from uniborg.util import admin_cmd
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
+    if not Config.ENABLE_REQUESTS_RECEIVER:
+        return
     pattern = r"([a-zA-Z0-9 ]+)( #([r]|[R])equest)($|[\n])"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id

@@ -38,6 +38,10 @@
       "description": "Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture",
       "required": false
     },
+    "ENABLE_REQUESTS_RECEIVER": {
+      "description": "Set to True if you want to enable #request response.",
+      "required": false
+    },
     "PRIVATE_GROUP_BOT_API_ID": {
       "description": "Send .g_id in any group to fill this value.",
       "value": "-100",
@@ -131,7 +135,7 @@
       "required": false
     },
     "SUDO_USERS": {
-      "description": "Makes Your Account Stable.",
+      "description": "Makes Your Account and Bot more Stable.",
       "value": "606846495",
       "required": false
     },
@@ -166,12 +170,12 @@
       "required": false
     },
     "DATA_DIRECTORY": {
-      "description": "I dunno y is it for but it is necessary for my repo.",
+      "description": "Set a directory for data.",
       "value": "data",
       "required": false
     },
     "FF_MPEG_DOWN_LOAD_MEDIA_PATH": {
-      "description": "blah blah blah.",
+      "description": "Path for ffmpeg codec.",
       "value": "./uniborg.media.ffmpeg/",
       "required": false
     },
@@ -213,7 +217,7 @@
     },
     "UB_BLACK_LIST_CHAT": {
       "description": "haha",
-      "value": "-100",
+      "value": "-1001398968870",
       "required": false
     },
     "TELE_GRAM_2FA_CODE": {
