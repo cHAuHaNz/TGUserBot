@@ -199,3 +199,20 @@ async def _(event):
          for i in range(0,11):
              await asyncio.sleep(0.3)
              await event.edit(animation_chars[i % 4])
+    if input_str == "hibuse":
+        await event.edit(input_str)
+        animation_chars = [
+            "👁👁\n  👄  =====> Abey Ja Na Gandu",
+            "👁👁\n  👅  =====> Abey Ja Na Madarchod",    
+            "👁👁\n  💋  =====> Abey Ja Na Randi",
+            "👁👁\n  👄  =====> Abey Ja Na Betichod",
+            "👁👁\n  👅  =====> Abey Ja Na Behenchod",    
+            "👁👁\n  💋  =====> Abey Ja Na Na Mard",
+            "👁👁\n  👄  =====> Abey Ja Na Randi",
+            "👁👁\n  👅  =====> Abey Ja Na Bhosdk",    
+            "👁👁\n  💋  =====> Abey Ja Na Chutiye",
+            "👁👁\n  👄  =====> Hi All, How Are You Guys..."
+        ]
+        for hi in animation_chars:
+            await event.edit(hi)
+            await asyncio.sleep(0.5)

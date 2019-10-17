@@ -1,41 +1,18 @@
-"""
-
-Memes Plugin for Userbot
-
+"""Memes Plugin for TGUserbot
 usage = .meme someCharacter //default delay will be 3
-
-usage = .🖕
-
-
-
-"""
-
+usage = .🖕"""
 from telethon import events
-
 import asyncio
-
 import os
-
 import sys
 
-
-
-
-
 @borg.on(events.NewMessage(pattern=r"\.meme", outgoing=True))
-
 async def meme(event):
-
     if event.fwd_from:
-
         return   
-
     memeVar = event.text
-
     sleepValue = 3
-
     memeVar = memeVar[6:] 
-
     await event.edit("-------------------------------------------------"+memeVar)
     await event.edit("------------------------------------------------"+memeVar+"-")
     await event.edit("-----------------------------------------------"+memeVar+"--")
@@ -87,55 +64,24 @@ async def meme(event):
     await event.edit("-"+memeVar+"------------------------------------------------")
     await event.edit(memeVar+"----------------------------------------------------")
     await event.edit(memeVar)
-
     await asyncio.sleep(sleepValue)
-
-
-
-"""
-
-Bonus : Flower Boquee Generater
-
-usage:- .flower
-
-
-
-"""
 
 @borg.on(events.NewMessage(pattern=r"\.🖕", outgoing=True))
-
 async def meme(event):
-
     if event.fwd_from:
-
         return   
-
-    flower =" 🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕"
-
+    symbol =" 🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕"
     sleepValue = 5
-
-           
-
-    await event.edit(flower+"        ")
-
-    await event.edit(flower+flower+"       ")
-
-    await event.edit(flower+flower+flower+"      ")
-
-    await event.edit(flower+flower+flower+flower+"     ")
-
-    await event.edit(flower+flower+flower+flower+flower+"    ")
-
-    await event.edit(flower+flower+flower+flower+flower+flower+flower+"   ")
-
-    await event.edit(flower+flower+flower+flower+flower+flower+flower+flower+"  ")
-
-    await event.edit(flower+flower+flower+flower+flower+flower+flower+flower+flower+" ")
-
-    await event.edit(flower+flower+flower+flower+flower+flower+flower+flower+flower+flower)
-
+    await event.edit(symbol+"        ")
+    await event.edit(symbol+symbol+"       ")
+    await event.edit(symbol+symbol+symbol+"      ")
+    await event.edit(symbol+symbol+symbol+symbol+"     ")
+    await event.edit(symbol+symbol+symbol+symbol+symbol+"    ")
+    await event.edit(symbol+symbol+symbol+symbol+symbol+symbol+symbol+"   ")
+    await event.edit(symbol+symbol+symbol+symbol+symbol+symbol+symbol+symbol+"  ")
+    await event.edit(symbol+symbol+symbol+symbol+symbol+symbol+symbol+symbol+symbol+" ")
+    await event.edit(symbol+symbol+symbol+symbol+symbol+symbol+symbol+symbol+symbol+symbol)
     await asyncio.sleep(sleepValue)
-
 
 @borg.on(events.NewMessage(pattern=r"\.resp", outgoing=True))
 async def meme(event):
