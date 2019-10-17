@@ -85,7 +85,7 @@ async def set_no_log_p_m(event):
                 await event.delete()
 
 
-@borg.on(admin_cmd(pattern="approvepm ?(.*)"))
+@borg.on(admin_cmd(pattern="approvepm($| )(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -105,7 +105,7 @@ async def approve_p_m(event):
                 await event.delete()
 
 
-@borg.on(admin_cmd(pattern="blockpm ?(.*)"))
+@borg.on(admin_cmd(pattern="blockpm($| )(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -118,7 +118,7 @@ async def approve_p_m(event):
                 await event.edit("███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nPM's Blocked Successfully...")
                 await asyncio.sleep(30)
 
-@borg.on(admin_cmd(pattern="block ?(.*)"))
+@borg.on(admin_cmd(pattern="block($| )(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
