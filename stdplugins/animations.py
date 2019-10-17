@@ -3,6 +3,7 @@
 .sex // 🤵👼👰,
 .kiss // 🤵💋👰
 .🍎 to print a stack of 🍎
+.gaand
 .loading
 .square
 .up
@@ -187,4 +188,14 @@ async def _(event):
         ]
         for i in animation_ttl:
             await asyncio.sleep(animation_interval)
-            await event.edit(animation_chars[i % 8])    
+            await event.edit(animation_chars[i % 8])
+    if input_str == "gaand":
+         animation_chars = [
+                    "me",
+                    "loge",
+                    "kya?",
+                    "gaand"
+            ]
+         for i in range(0,11):
+             await asyncio.sleep(0.3)
+             await event.edit(animation_chars[i % 4])
