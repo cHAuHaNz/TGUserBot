@@ -52,8 +52,13 @@
       "value": "-100",
       "required": false
     },
+    "PRIVATE_GROUP_REQUESTS_RECEIVER": {
+      "description": "Send .g_id in any channel to fill this value. Required for #request auto-response to work!",
+      "value": "-100",
+      "required": false
+    },
     "PRIVATE_GROUP_FOR_REQUESTS_ID": {
-      "description": "Send .g_id in any channel to fill this value. All the requests with #requests will be forwarded to this group.",
+      "description": "Send .g_id in any channel to fill this value. All the requests with #request will be forwarded to this group.",
       "value": "-100",
       "required": false
     },"TMP_DOWNLOAD_DIRECTORY": {

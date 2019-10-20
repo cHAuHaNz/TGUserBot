@@ -5,7 +5,7 @@ Commands:
 
 from telethon import events, utils
 from telethon.tl import types
-from sql_helpers.welcome_sql import get_current_welcome_settings, \
+from sql_helpers.welcome_sql import get_current_welcome_settings,
     add_welcome_setting, rm_welcome_setting, update_previous_welcome
 from uniborg.util import admin_cmd
 

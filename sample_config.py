@@ -22,6 +22,8 @@ class Config(object):
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID", -100123456789))
     # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
     PRIVATE_CHANNEL_BOT_API_ID = int(os.environ.get("PRIVATE_CHANNEL_BOT_API_ID", -100123456789))
+    # Send .g_id in any channel to fill this value. This is the group to handle #requests.
+    PRIVATE_GROUP_FOR_REQUESTS_ID = int(os.environ.get("PRIVATE_GROUP_REQUESTS_RECEIVER", -100123456789))
     # Send .g_id in any channel to fill this value. All the requests with #requests will be forwarded to this group.
     PRIVATE_GROUP_FOR_REQUESTS_ID = int(os.environ.get("PRIVATE_GROUP_FOR_REQUESTS_ID", -100123456789))
     # This is required for the plugins involving the file system.
@@ -32,7 +34,7 @@ class Config(object):
     # This is required for the hash to torrent file functionality to work.
     HASH_TO_TORRENT_API = os.environ.get("HASH_TO_TORRENT_API", "https://example.com/torrent/{}");
     # This is required for the @telegraph functionality.
-    TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "UniBorg")
+    TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "JoinXpl0iter")
     # Get a Free API Key from OCR.Space
     OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
     # Send .get_id in any group with all your administration bots (added)
