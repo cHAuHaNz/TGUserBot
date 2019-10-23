@@ -1,6 +1,4 @@
-"""Commands 
-
-.promote\
+""".promote\
 \nUsage: Reply to someone's message with .promote to promote them.\
 \n\n.demote\
 \nUsage: Reply to someone's message with .demote to revoke their admin permissions.\
