@@ -4,7 +4,7 @@ Command:
 .movie <Movie_Name>
   © [cHAuHaN](http://t.me/amnd33p)"""
 
-  import requests
+import requests
 import bs4
 import re
 from telethon import *
