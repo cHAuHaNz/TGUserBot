@@ -1,4 +1,10 @@
-import requests
+"""Get details of a series or movie.
+Command: 
+.tv <Series_Name>
+.movie <Movie_Name>
+  © [cHAuHaN](http://t.me/amnd33p)"""
+
+  import requests
 import bs4
 import re
 from telethon import *
@@ -77,8 +83,8 @@ async def imdb(e):
                 mov_rating = r.strong['title']
             else:
               mov_rating = 'Not available'
-            await e.edit('<a href='+poster+'>&#8203;</a>'
-                  '<b>Title : </b><code>'+mov_title+
+            await e.edit('<b>Title : </b><code>'+mov_title+
+                  '<a href='+poster+'> ‏‏‎ </a>'
                   '</code>\n<code>'+mov_details+
                   '</code>\n<b>Rating : </b><code>'+mov_rating+
                   '</code>\n<b>Country : </b><code>'+mov_country[0]+

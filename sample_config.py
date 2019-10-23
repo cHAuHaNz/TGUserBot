@@ -23,7 +23,7 @@ class Config(object):
     # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
     PRIVATE_CHANNEL_BOT_API_ID = int(os.environ.get("PRIVATE_CHANNEL_BOT_API_ID", -100123456789))
     # Send .g_id in any channel to fill this value. This is the group to handle #requests.
-    PRIVATE_GROUP_FOR_REQUESTS_ID = int(os.environ.get("PRIVATE_GROUP_REQUESTS_RECEIVER", -100123456789))
+    PRIVATE_GROUP_REQUESTS_RECEIVER = int(os.environ.get("PRIVATE_GROUP_REQUESTS_RECEIVER", -100123456789))
     # Send .g_id in any channel to fill this value. All the requests with #requests will be forwarded to this group.
     PRIVATE_GROUP_FOR_REQUESTS_ID = int(os.environ.get("PRIVATE_GROUP_FOR_REQUESTS_ID", -100123456789))
     # This is required for the plugins involving the file system.

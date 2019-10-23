@@ -1,14 +1,23 @@
-# For @UniBorg
-"""fake leave
-.fleave"""
+"""Leave Groups
+.leave to Leave Group
+.fleave to Fake Leave."""
 from telethon import events
-from datetime import datetime
 from uniborg.util import admin_cmd
-import importlib.util
 import asyncio
-import random
-import importlib.util
-@borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?f)leave '))
+from telethon.tl.functions.channels import LeaveChannelRequest
+
+import time
+@borg.on(admin_cmd("leave", outgoing=True))
+async def leave(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit("[Legend]](http://t.me/amnd33p) `is leaving this chat.....!`\n@admin `Goodbye aren't forever.. `")
+        time.sleep(3)
+        if '-' in str(e.chat_id):
+            await borg(LeaveChannelRequest(e.chat_id))
+        else:
+            await e.edit('`Sir, This is Not A Chat.`')
+
+@borg.on(admin_cmd("fleave", outgoing=True))
 async def timer_blankx(e):
 	txt=e.text[7:] + '\n\n`Exiting This Group In` '
 	j=5

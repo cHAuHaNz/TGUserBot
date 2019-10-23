@@ -19,7 +19,7 @@ pySmartDL
 python-magic
 qrcode
 regex
-requests
+requests>=2.18.4
 PyGithub
 speedtest-cli
 sqlalchemy
