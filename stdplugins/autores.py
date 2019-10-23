@@ -31,4 +31,4 @@ async def on_snip(event):
                     messages=msg,
                     from_peer=event.chat_id,
                     silent=False
-                )   
+                )

@@ -1,6 +1,7 @@
+#Plugin by @Deonnn //Thanks from cHAuHaN
 """Say something interesting...
 Syntax: .belo
-    by @Deonnn
+
 Quotes credits: Being logical Channel
 """
 from telethon import events
