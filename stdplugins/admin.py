@@ -22,7 +22,7 @@
 \nUsage: Retrieves all users in a chat."
 
 Userbot module to help you manage a group.
-  © [cHAuHaN](http://t.me/amnd33p)\n\n"""
+  © [cHAuHaN](tg://user?id={606846495})"""
 
 from asyncio import sleep
 from os import remove
@@ -143,7 +143,7 @@ async def promote(eventPromote):
                     rank = ""
                 )
             )
-            await eventPromote.edit("`Promoted Successfully! Thank` [cHAuHaN](http://t.me/amnd33p)")
+            await eventPromote.edit("`Promoted Successfully! Thank` [cHAuHaN](tg://user?id={606846495})")
         except BadRequestError:
             await eventPromote.edit("`I don't have sufficient permissions!`")
             return
@@ -254,7 +254,7 @@ async def unban(eventUnban):
         if not admin and not creator:
             await eventUnban.edit("`I am not an admin!`")
             return
-        await eventUnban.edit("[cHAuHaN](tg://user?id={606846495}) `forgives everyone. Unbanned!`")
+        await eventUnban.edit("[cHAuHaN](tg://user?id={606846495}) `forgives everyone. Unbanning!`")
         user = await get_user_from_event(eventUnban)
         if user:
             pass
@@ -267,7 +267,6 @@ async def unban(eventUnban):
                 UNBAN_RIGHTS
             ))
             await eventUnban.edit("```Unbanned Successfully```")
-
             if ENABLE_LOG:
                 await eventUnban.client.send_message(
                     LOGGING_CHATID,
@@ -407,6 +406,41 @@ async def muter(mutedMessage):
             await mutedMessage.delete()
 
 
+@borg.on(events.NewMessage(outgoing=True, pattern="^.gmute(?: |$)(.*)"))
+async def gmute(eventGmute):
+    if not eventGmute.text[0].isalpha() and eventGmute.text[0] not in ("/", "#", "@", "!"):
+        chat = await eventGmute.get_chat()
+        admin = chat.admin_rights
+        creator = chat.creator
+        if not admin and not creator:
+            await eventGmute.edit("`I am not an admin!`")
+            return
+        try:
+            from sql_helpers.gmute_sql import gmute
+        except AttributeError:
+            await eventGmute.edit("`Running on Non-SQL mode!`")
+            return
+
+        user = await get_user_from_event(eventGmute)
+        if user:
+            pass
+        else:
+            return
+        await eventGmute.edit("`Grabs a huge, sticky duct tape!`")
+        if gmute(user.id) is False:
+            await eventGmute.edit('`Error! User probably already gmuted.\nRe-rolls the tape.`')
+        else:
+            await eventGmute.edit("`Haha Yash! Globally taped!`")
+
+            if ENABLE_LOG:
+                await eventGmute.client.send_message(
+                    LOGGING_CHATID,
+                    "#GMUTE\n"
+                    f"USER: [{user.first_name}](tg://user?id={user.id})\n"
+                    f"CHAT: {eventGmute.chat.title}(`{eventGmute.chat_id}`)"
+                )
+
+
 @borg.on(events.NewMessage(outgoing=True, pattern="^.ungmute(?: |$)(.*)"))
 async def ungmute(eventUnGmute):
     if not eventUnGmute.text[0].isalpha() and eventUnGmute.text[0] \
@@ -440,41 +474,6 @@ async def ungmute(eventUnGmute):
                     "#UNGMUTE\n"
                     f"USER: [{user.first_name}](tg://user?id={user.id})\n"
                     f"CHAT: {eventUnGmute.chat.title}(`{eventUnGmute.chat_id}`)"
-                )
-
-
-@borg.on(events.NewMessage(outgoing=True, pattern="^.gmute(?: |$)(.*)"))
-async def gmute(eventGmute):
-    if not eventGmute.text[0].isalpha() and eventGmute.text[0] not in ("/", "#", "@", "!"):
-        chat = await eventGmute.get_chat()
-        admin = chat.admin_rights
-        creator = chat.creator
-        if not admin and not creator:
-            await eventGmute.edit("`I am not an admin!`")
-            return
-        try:
-            from sql_helpers.gmute_sql import gmute
-        except AttributeError:
-            await eventGmute.edit("`Running on Non-SQL mode!`")
-            return
-
-        user = await get_user_from_event(eventGmute)
-        if user:
-            pass
-        else:
-            return
-        await eventGmute.edit("`Grabs a huge, sticky duct tape!`")
-        if gmute(user.id) is False:
-            await eventGmute.edit('`Error! User probably already gmuted.\nRe-rolls the tape.`')
-        else:
-            await eventGmute.edit("`Haha Yash! Globally taped!`")
-
-            if ENABLE_LOG:
-                await eventGmute.client.send_message(
-                    LOGGING_CHATID,
-                    "#GMUTE\n"
-                    f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                    f"CHAT: {eventGmute.chat.title}(`{eventGmute.chat_id}`)"
                 )
 
 
@@ -577,7 +576,7 @@ async def pinmessage(eventPinMessage):
         if not admin and not creator:
             await eventPinMessage.edit("`I am not an admin!`")
             return
-        to_pin = eventPinMessage.reply_to_eventPinMessage_id
+        to_pin = eventPinMessage.reply_to_msg_id
         if not to_pin:
             await eventPinMessage.edit("`Reply to a message to pin it.`")
             return
@@ -615,7 +614,7 @@ async def kick(eventKickUser):
         if not user:
             await eventKickUser.edit("`Couldn't fetch user.`")
             return
-        await eventKickUser.edit("`Kicking this chuu...`")
+        await eventKickUser.edit("`Kicking this nibba...`")
         try:
             await eventKickUser.client(
                 EditBannedRequest(
