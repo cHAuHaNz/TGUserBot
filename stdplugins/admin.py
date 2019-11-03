@@ -22,7 +22,7 @@
 \nUsage: Retrieves all users in a chat."
 
 Userbot module to help you manage a group.
-  © [cHAuHaN](tg://user?id={606846495})"""
+  © [cHAuHaN](http://t.me/amnd33p)"""
 
 from asyncio import sleep
 from os import remove
@@ -143,7 +143,7 @@ async def promote(eventPromote):
                     rank = ""
                 )
             )
-            await eventPromote.edit("`Promoted Successfully! Thank` [cHAuHaN](tg://user?id={606846495})")
+            await eventPromote.edit("`Promoted Successfully!`")
         except BadRequestError:
             await eventPromote.edit("`I don't have sufficient permissions!`")
             return
@@ -254,7 +254,7 @@ async def unban(eventUnban):
         if not admin and not creator:
             await eventUnban.edit("`I am not an admin!`")
             return
-        await eventUnban.edit("[cHAuHaN](tg://user?id={606846495}) `forgives everyone. Unbanning!`")
+        await eventUnban.edit("[cHAuHaN](http://t.me/amnd33p) `forgives everyone. Unbanning!`")
         user = await get_user_from_event(eventUnban)
         if user:
             pass
