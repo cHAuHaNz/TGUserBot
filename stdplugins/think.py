@@ -1,15 +1,7 @@
-"""Emoji
-
-Available Commands:
-
-.think"""
-
+"""Command: .think"""
 from telethon import events
-
 import asyncio
-
 from uniborg.util import admin_cmd
-
 @borg.on(admin_cmd("(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -57,8 +49,6 @@ async def _(event):
             "T+I#K@₹G",
             "THINKING... 🤔"
         ]
-
         for i in animation_ttl:
-        	
             await asyncio.sleep(animation_interval)
-            await event.edit(animation_chars[i % 72])
+            await event.edit(animation_chars[i % 36])
