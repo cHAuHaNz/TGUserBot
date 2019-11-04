@@ -28,6 +28,7 @@ Userbot module to help you manage a group.
 
 from asyncio import sleep
 from os import remove
+from uniborg.util import admin_cmd
 from telethon import events
 from telethon.errors import (BadRequestError, ChatAdminRequiredError,
                              ImageProcessFailedError, PhotoCropSizeSmallError,

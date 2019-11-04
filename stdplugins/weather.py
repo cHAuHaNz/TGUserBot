@@ -1,6 +1,6 @@
 """Get weather data using OpenWeatherMap
 Syntax: .weather <Location>
-.wttr <location> """
+.wthr <location> to get forcast in Image"""
 
 import aiohttp
 import io
@@ -24,15 +24,15 @@ async def _(event):
         sun_rise_time = int(response_api["sys"]["sunrise"]) + country_time_zone
         sun_set_time = int(response_api["sys"]["sunset"]) + country_time_zone
         await event.edit(
-            """{}
-**Temperature**: {}°С
-    __minimium__: {}°С
-    __maximum__ : {}°С
-**Humidity**: {}%
-**wind**: {}m/s
-**clouds**: {}hpa
-**Sunrise**: {} {}
-**Sunset**: {} {}""".format(
+                """{}
+                **Temperature**: {}°С
+                __minimium__: {}°С
+                __maximum__ : {}°С
+                **Humidity**: {}%
+                **wind**: {}m/s
+                **clouds**: {}hpa
+                **Sunrise**: {} {}
+                **Sunset**: {} {}""".format(
                 input_str,
                 response_api["main"]["temp"],
                 response_api["main"]["temp_min"],
@@ -51,7 +51,7 @@ async def _(event):
         await event.edit(response_api["message"])
 
 
-@borg.on(admin_cmd(pattern="wttr (.*)"))
+@borg.on(admin_cmd(pattern="wthr (.*)"))
 async def _(event):
     if event.fwd_from:
         return
