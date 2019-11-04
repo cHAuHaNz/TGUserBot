@@ -1,7 +1,8 @@
-"""Greetings
-Commands:
+"""Commands:
 .clearwelcome
-.savewelcome <Welcome Message>"""
+.savewelcome as reply to a message.
+
+Fixed by © [cHAuHaN](http://t.me/amnd33p)"""
 
 from telethon import events, utils
 from telethon.tl import types
@@ -31,7 +32,7 @@ async def _(event):
             a_user = await event.get_user()
             msg_o = await event.client.get_messages(
                 entity=Config.PRIVATE_CHANNEL_BOT_API_ID,
-                ids=int(cws.f_mesg_id)
+                ids=int(cws.previous_welcome)
             )
             current_saved_welcome_message = msg_o.message
             mention = "[{}](tg://user?id={})".format(a_user.first_name, a_user.id)
@@ -68,7 +69,7 @@ async def _(event):
     await event.edit(
         "Welcome note cleared. " + \
         "[This](https://t.me/c/{}/{}) was your previous welcome message.".format(
-            Config.PRIVATE_CHANNEL_BOT_API_ID[4:],
-            cws.f_mesg_id
+            str(Config.PRIVATE_CHANNEL_BOT_API_ID),
+            cws.previous_welcome
         )
     )
