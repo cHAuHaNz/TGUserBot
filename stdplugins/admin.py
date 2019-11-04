@@ -19,7 +19,9 @@
 \n\n.adminlist\
 \nUsage: Retrieves all admins in a chat.\
 \n\n.userslist or .userslist <name>\
-\nUsage: Retrieves all users in a chat."
+\nUsage: Retrieves all users in a chat.
+\n\n.undlt\
+\nUsage: Sends the last deleted message in group."
 
 Userbot module to help you manage a group.
   © [cHAuHaN](http://t.me/amnd33p)"""
@@ -683,6 +685,20 @@ async def list_users(eventListUsers):
                 reply_to=eventListUsers.id,
             )
             remove("userslist.txt")
+
+@borg.on(admin_cmd(pattern="undlt$"))
+async def _(event):
+    if event.fwd_from:
+        return
+    c = await event.get_chat()
+    if c.admin_rights or c.creator:
+        a = await borg.get_admin_log(event.chat_id,limit=1, search="", edit=False, delete=True)
+        for i in a:
+          await event.reply(i.original.action.message)
+    else:
+        await event.edit("`You need administrative permissions in order to do this command`")
+        await asyncio.sleep(3)
+        await event.delete()
 
 
 async def get_user_from_event(event):
