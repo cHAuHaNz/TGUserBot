@@ -1,6 +1,6 @@
 """setgrouppic\
 \nUsage: Reply to an Image to set it as group's icon.\
-.promote\
+\n\n.promote\
 \nUsage: Reply to someone's message with .promote to promote them.\
 \n\n.demote\
 \nUsage: Reply to someone's message with .demote to revoke their admin permissions.\
