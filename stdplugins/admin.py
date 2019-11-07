@@ -1,4 +1,6 @@
-""".promote\
+"""setgrouppic\
+\nUsage: Reply to an Image to set it as group's icon.\
+.promote\
 \nUsage: Reply to someone's message with .promote to promote them.\
 \n\n.demote\
 \nUsage: Reply to someone's message with .demote to revoke their admin permissions.\
@@ -6,6 +8,8 @@
 \nUsage: Reply to someone's message with .ban to ban them.\
 \n\n.unban\
 \nUsage: Reply to someone's message with .unban to unban them in this chat.\
+\n\n.kick\
+\nUsage: Reply to someone's message with .kick to kick them.\
 \n\n.mute\
 \nUsage: Reply to someone's message with .mute to mute them, works on admins too.\
 \n\n.unmute\
@@ -16,10 +20,12 @@
 \nUsage: Reply someone's message with .ungmute to remove them from the gmuted list.\
 \n\n.delusers\
 \nUsage: Searches for deleted accounts in a group. Use .delusers clean to remove deleted accounts from the group.\
+\n\n.pin\
+\nUsage: Reply to message to pin it in the group.\
 \n\n.adminlist\
 \nUsage: Retrieves all admins in a chat.\
 \n\n.userslist or .userslist <name>\
-\nUsage: Retrieves all users in a chat.
+\nUsage: Retrieves all users in a chat.\
 \n\n.undlt\
 \nUsage: Sends the last deleted message in group."
 
@@ -81,7 +87,7 @@ UNMUTE_RIGHTS = ChatBannedRights(
 @borg.on(events.NewMessage(outgoing=True, pattern="^.setgrouppic$"))
 async def setgrouppic(eventPic):
     if not eventPic.text[0].isalpha() and eventPic.text[0] not in ("/", "#", "@", "!"):
-        if event.reply_to_msg_id:
+        if eventPic.reply_to_msg_id:
             replymsg = await eventPic.get_reply_message()
             chat = await eventPic.get_chat()
             admin = chat.admin_rights
