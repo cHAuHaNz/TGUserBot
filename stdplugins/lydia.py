@@ -1,4 +1,4 @@
-"""Lydia AI plugin for TGUserbot by @amnd33p
+"""Lydia AI plugin for TGUserbot
 
 .eai <as a reply to user's message //Turns AI on For that user.
 .dai <as a reply to user's message //Turns AI off For that user.
