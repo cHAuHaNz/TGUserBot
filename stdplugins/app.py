@@ -1,8 +1,7 @@
 """Fetch App Details from Playstore.
-.apk <app_name> to fetch app details.
-.apkr <app_name>  to fetch app details with Xpl0iter request link.
-  © [cHAuHaN](http://t.me/amnd33p)
-"""
+.app <app_name> to fetch app details.
+.appr <app_name>  to fetch app details with Xpl0iter request link.
+  © [cHAuHaN](http://t.me/amnd33p)"""
 import requests
 import bs4 
 import re
@@ -10,10 +9,7 @@ from uniborg.util import admin_cmd
 from telethon import *
 from uniborg import *
 
-@borg.on(events.NewMessage(pattern='.app (.*)'))
-
-@borg.on(events.MessageEdited(pattern='.app (.*)'))
-
+@borg.on(admin_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(e):
     try:
         app_name = e.pattern_match.group(1)
@@ -41,10 +37,7 @@ async def apk(e):
     except Exception as err:
         await e.edit("Exception Occured:- "+str(err))
 
-@borg.on(events.NewMessage(pattern='.appr (.*)'))
-
-@borg.on(events.MessageEdited(pattern='.appr (.*)'))
-
+@borg.on(admin_cmd(pattern="appr (.*)", allow_sudo=True))
 async def apkr(e):
     try:
         app_name = e.pattern_match.group(1)

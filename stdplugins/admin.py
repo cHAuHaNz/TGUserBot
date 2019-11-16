@@ -24,6 +24,8 @@
 \nUsage: Reply to message to pin it in the group.\
 \n\n.adminlist\
 \nUsage: Retrieves all admins in a chat.\
+\n\n.bots\
+\nUsage: Retrieves all bots in a chat.\
 \n\n.userslist or .userslist <name>\
 \nUsage: Retrieves all users in a chat.\
 \n\n.undlt\
@@ -47,7 +49,7 @@ from telethon.tl.functions.channels import (EditAdminRequest,
 from telethon.tl.functions.messages import UpdatePinnedMessageRequest
 from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
-                               MessageMediaPhoto)
+                               MessageMediaPhoto, PeerChat)
 ENABLE_LOG = True
 LOGGING_CHATID = Config.PRIVATE_CHANNEL_BOT_API_ID
 BANNED_RIGHTS = ChatBannedRights(
@@ -84,7 +86,7 @@ UNMUTE_RIGHTS = ChatBannedRights(
     send_messages=False
 )
 
-@borg.on(events.NewMessage(outgoing=True, pattern="^.setgrouppic$"))
+@borg.on(events.NewMessage(outgoing=True, pattern="^.setgpic$"))
 async def setgrouppic(eventPic):
     if not eventPic.text[0].isalpha() and eventPic.text[0] not in ("/", "#", "@", "!"):
         if eventPic.reply_to_msg_id:
@@ -241,7 +243,7 @@ async def ban(eventBan):
             if reply:
                 await reply.delete()
         except BadRequestError:
-            await eventBan.edit("`I dont have message nuking rights! But still he was banned!`")
+            await eventBan.edit("`I don't have message nuking rights! But still he was banned!`")
             return
         await eventBan.edit("`{}` was banned!".format(str(user.id)))
         if ENABLE_LOG:
@@ -574,6 +576,42 @@ async def listadmins(eventListAdmins):
         except ChatAdminRequiredError as err:
             mentions += " " + str(err) + "\n"
         await eventListAdmins.edit(mentions, parse_mode="html")
+
+@borg.on(events.NewMessage(outgoing=True, pattern="^.bots$"))
+async def listbots(eventListBots):
+    info = await eventListBots.client.get_entity(eventListBots.chat_id)
+    title = info.title if info.title else "this chat"
+    mentions = f'<b>Bots in {title}:</b>\n'
+    try:
+        if isinstance(message.to_id, PeerChat):
+            await eventListBots.edit("`Only Supergroups can have bots.`")
+            return
+        else:
+            async for user in eventListBots.client.iter_participants(
+                    eventListBots.chat_id, filter=ChannelParticipantsBots):
+                if not user.deleted:
+                    link = f"<a href=\"tg://user?id={user.id}\">{user.first_name}</a>"
+                    userid = f"<code>{user.id}</code>"
+                    mentions += f"\n{link} {userid}"
+                else:
+                    mentions += f"\n<code>{user.id}</code>(Bot deleted by owner)"
+    except ChatAdminRequiredError as err:
+        mentions += " " + str(err) + "\n"
+    try:
+        await eventListBots.edit(mentions, parse_mode="html")
+    except MessageTooLongError:
+        await eventListBots.edit(
+            "This group is filled with bots as hell. Uploading bots list as file.")
+        file = open("botlist.txt", "w+")
+        file.write(mentions)
+        file.close()
+        await eventListBots.client.send_file(
+            eventListBots.chat_id,
+            "botlist.txt",
+            caption='Bots in {}'.format(title),
+            reply_to=eventListBots.id,
+        )
+        remove("botlist.txt")
 
 
 @borg.on(events.NewMessage(outgoing=True, pattern="^.pin(?: |$)(.*)"))
