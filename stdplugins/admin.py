@@ -583,7 +583,7 @@ async def listbots(eventListBots):
     title = info.title if info.title else "this chat"
     mentions = f'<b>Bots in {title}:</b>\n'
     try:
-        if isinstance(message.to_id, PeerChat):
+        if isinstance(eventListBots.to_id, PeerChat):
             await eventListBots.edit("`Only Supergroups can have bots.`")
             return
         else:
