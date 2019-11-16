@@ -74,7 +74,6 @@ class Config(object):
         "filters",
         "locks",
         "pmpermit",
-        "snip",
         "welcome_old",
         "gban"
     ]
