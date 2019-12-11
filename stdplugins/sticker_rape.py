@@ -44,8 +44,8 @@ async def _(event):
 
     me = borg.me
     userid = event.from_id
-    packname = f"Join @Xpl0iter"
-    packshortname = f"cHAuHaNz{userid}"  # format: Uni_Borg_userid
+    packname = f"@" + me.username + "'s Sticker Pack"
+    packshortname = f"stickers{userid}"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "cHAuHaNz_Sticker.png"
@@ -54,8 +54,8 @@ async def _(event):
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        packname = f"cHAuHaN_AnimatedStickers"
-        packshortname = f"cHAuHaN_Animated"  # format: Uni_Borg_userid
+        packname = f"@" + me.username + "'s Animated Pack"
+        packshortname = f"animated{userid}"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
@@ -64,7 +64,6 @@ async def _(event):
             resize_image(mem_file, sticker)
             sticker.seek(0)
             uploaded_sticker = await borg.upload_file(sticker, file_name=file_ext_ns_ion)
-
     await event.edit("Aham Brahmasmi.............")
 
     async with borg.conversation("@Stickers") as bot_conv:
@@ -117,7 +116,7 @@ async def _(event):
             await silently_send_message(bot_conv, sticker_emoji)
             await silently_send_message(bot_conv, "/done")
 
-    await event.edit(f"This Sticker Is Raped by [cHAuHaN](http://t.me/amnd33p)! Rape can be found [here](t.me/addstickers/{packshortname}).")
+    await event.edit(f"This Sticker Is Raped by [" + me.first_name + "](http://t.me/"+ me.username +")! Rape can be found [here](t.me/addstickers/{packshortname}).")
 
 
 @borg.on(admin_cmd("packinfo"))

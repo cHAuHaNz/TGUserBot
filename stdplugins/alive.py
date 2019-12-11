@@ -9,7 +9,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`I'm right behind you master` [cHAuHaN](http://t.me/amnd33p/)"
+    mentions = "`I'm right behind you master` [" + borg.me.first_name + "](http://t.me/"+ borg.me.username +")"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
