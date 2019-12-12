@@ -1,4 +1,4 @@
-"""COMMAND : .runs , .metoo , .rape , .insult , .pro , .abuse , .gey
+"""COMMAND : .runs , .metoo , .raped , .insult , .pro , .abuse , .gey
 \nDebugged by @amnd33p"""
 
 from telethon import events
@@ -112,7 +112,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@borg.on(admin_cmd("rape($)"))
+@borg.on(admin_cmd("raped($)"))
 async def _(event):
     if event.fwd_from:
 		    return
