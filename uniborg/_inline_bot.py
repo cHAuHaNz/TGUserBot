@@ -128,10 +128,11 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_plugin_(.*)")))
     async def on_plug_in_callback_query_handler(event):
         plugin_name = event.data_match.group(1).decode("UTF-8")
-        help_string = borg._plugins[plugin_name].__doc__[
-            0:125]
-            reply_pop_up_alert = help_string if help_string is not None else \
-            "No DOCSTRING has been setup for {} plugin".format(plugin_name)
+        help_string = borg._plugins[plugin_name].__doc__[0:125]
+        if help_string is not None:
+            reply_pop_up_alert = help_string 
+        else:
+            reply_pop_up_alert = "No DOCSTRING has been setup for {} plugin".format(plugin_name)
         reply_pop_up_alert += "\n\n Use .remove {} to remove this plugin\n\
             © @amnd33p".format(plugin_name)
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
