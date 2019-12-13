@@ -66,7 +66,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == borg.uid and query.startswith("@UniBorg"):
+        if event.query.user_id == borg.uid and query.startswith("@amnd33p_bot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, borg._plugins, "helpme")
             result = builder.article(
@@ -74,7 +74,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text="{}\nℂ𝕦𝕣𝕣𝕖𝕟𝕥𝕝𝕪 𝕃𝕠𝕒𝕕𝕖𝕕 ℙ𝕝𝕦𝕘𝕚𝕟𝕤: {}".format(
                     query, len(borg._plugins)),
                 buttons=buttons,
-                link_preview=False
+                link_preview=True
             )
         elif query.startswith("tb_btn"):
             result = builder.article(
@@ -100,7 +100,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [custom.Button.url("👨‍💻Source👨‍💻", "https://github.com/cHAuHaNz/TGUserBot/"), custom.Button.url(
                         "Deploy❗", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F&template=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F")]
                 ],
-                link_preview=False
+                link_preview=True
             )
         await event.answer([result] if result else None)
 
