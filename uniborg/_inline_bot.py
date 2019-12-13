@@ -10,9 +10,7 @@ from telethon import events, custom
 from uniborg.util import admin_cmd, humanbytes
 
 
-@borg.on(admin_cmd(  # pylint:disable=E0602
-    pattern="ib (.[^ ]*) (.*)"
-))
+@borg.on(admin_cmd(pattern="ib (.[^ ]*) (.*)"))
 async def _(event):
     # https://stackoverflow.com/a/35524254/4723940
     if event.fwd_from:
@@ -21,7 +19,7 @@ async def _(event):
     search_query = event.pattern_match.group(2)
     try:
         output_message = ""
-        bot_results = await borg.inline_query(  # pylint:disable=E0602
+        bot_results = await event.client.inline_query( 
             bot_username,
             search_query
         )
@@ -39,9 +37,7 @@ async def _(event):
             `{}`".format(bot_username, search_query, str(e)))
 
 
-@borg.on(admin_cmd(  # pylint:disable=E0602
-    pattern="icb (.[^ ]*) (.[^ ]*) (.*)"
-))
+@borg.on(admin_cmd(pattern="icb (.[^ ]*) (.[^ ]*) (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -50,19 +46,14 @@ async def _(event):
     i_plus_oneth_result = event.pattern_match.group(2)
     search_query = event.pattern_match.group(3)
     try:
-        bot_results = await borg.inline_query(  # pylint:disable=E0602
-            bot_username,
-            search_query
-        )
+        bot_results = await event.client.inline_query(bot_username,search_query)
         message = await bot_results[int(i_plus_oneth_result) - 1].click(event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True)
     except Exception as e:
         await event.edit(str(e))
 
 
-# pylint:disable=E0602
 if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
-    async def inline_handler(event):
+    @tgbot.on(events.InlineQuery)async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
@@ -74,42 +65,38 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text="{}\nℂ𝕦𝕣𝕣𝕖𝕟𝕥𝕝𝕪 𝕃𝕠𝕒𝕕𝕖𝕕 ℙ𝕝𝕦𝕘𝕚𝕟𝕤: {}".format(
                     query, len(borg._plugins)),
                 buttons=buttons,
-                link_preview=True
+                link_preview=False
             )
         elif query.startswith("tb_btn"):
             result = builder.article(
                 "Button Parser © @amnd33p",
                 text=f"Powered by @uniborg",
                 buttons=[],
-                link_preview=True
+                link_preview=False
             )
         else:
             result = builder.article(
                 "© @amnd33p",
-                text="""**Custom Built TGUserBot By** @amnd33p
-                    **Verified Account:** ✅
-                    **Official Channel:** https://t.me/Xpl0iter
-                    
-                    **Python 3.7.4 (default, Sep 12 2019, 01:19:52)** 
-                    **[GCC 7.4.0]**
-                    **Telethon 1.10.3**
-                    
-                    **Custom Built Fork:** https://github.com/cHAuHaNz/TGUserBot/""",
+                text="""**Custom Built [TGUserBot](https://github.com/cHAuHaNz/TGUserBot/) By** [cHAuHaN](tg://user?id=606846495)\
+                    \n**Verified Account:** ✅\
+                    \n**Official Channel:** [Tʜᴇ Xᴘʟ0ɪᴛᴇʀ™](https://t.me/Xpl0iter)\
+                    \n\
+                    \n**Python 3.7.4 (default, Sep 12 2019, 01:19:52)** \
+                    \n**[GCC 7.4.0]**\
+                    \n**Telethon 1.10.3**,
                 buttons=[
                     [custom.Button.url("Creator👤", "https://telegram.dog/amnd33p"), custom.Button.url("📼Channel📼", "https://t.me/Xpl0iter")],
                     [custom.Button.url("👨‍💻Source👨‍💻", "https://github.com/cHAuHaNz/TGUserBot/"), custom.Button.url(
                         "Deploy❗", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F&template=https%3A%2F%2Fgithub.com%2FcHAuHaNz%2FTGUserBot%2F")]
                 ],
-                link_preview=True
+                link_preview=False
             )
         await event.answer([result] if result else None)
 
 
-    @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-        data=re.compile(b"helpme_next\((.+?)\)")
-    ))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"helpme_next\((.+?)\)")))
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == borg.uid:  # pylint:disable=E0602
+        if event.query.user_id == borg.uid:
             current_page_number = int(
                 event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(
@@ -117,38 +104,34 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "⚠️ Warning: Don't Press Any Buttons ⚠️\n\nCustom Fork: https://github.com/cHAuHaNz/TGUserBot/\n\n\nNote: Bas kar BetiChod, Maa Ke Laude, Madarchod"
+            reply_pop_up_alert = "Please get your own @UniBorg, and don't edit my messages!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-        data=re.compile(b"helpme_prev\((.+?)\)")
-    ))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"helpme_prev\((.+?)\)")))
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == borg.uid:  # pylint:disable=E0602
+        if event.query.user_id == borg.uid:
             current_page_number = int(
                 event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(
                 current_page_number - 1,
-                borg._plugins,  # pylint:disable=E0602
+                borg._plugins,
                 "helpme"
             )
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own @Uniborg, and don't edit my messages!"
+            reply_pop_up_alert = "Please get your own @UniBorg, and don't edit my messages!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
-    @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-        data=re.compile(b"ub_plugin_(.*)")
-    ))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_plugin_(.*)")))
     async def on_plug_in_callback_query_handler(event):
         plugin_name = event.data_match.group(1).decode("UTF-8")
         help_string = borg._plugins[plugin_name].__doc__[
-            0:125]  # pylint:disable=E0602
-        reply_pop_up_alert = help_string if help_string is not None else \
+            0:125]
+            reply_pop_up_alert = help_string if help_string is not None else \
             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
-        reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
+        reply_pop_up_alert += "\n\n Use .remove {} to remove this plugin\n\
             © @amnd33p".format(plugin_name)
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 

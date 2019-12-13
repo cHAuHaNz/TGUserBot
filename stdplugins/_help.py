@@ -5,7 +5,7 @@ from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="info ?(.*)", allow_sudo=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="info ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -14,14 +14,14 @@ async def _(event):
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
         s_help_string = "use .info <module_name>"
-    help_string = """**Custom Built By** @amnd33p ) \n**Verified Account**: ✅\n**Official Channel**: https://t.me/Xpl0iter\n
+    help_string = """**Custom Built TGUserBot By** @amnd33p ) \n**Verified Account**: ✅\n**Official Channel**: https://t.me/Xpl0iter\n
 **Custom Built Fork**: https://github.com/cHAuHaNz/TGUserBot/""".format(
         sys.version,
         __version__
     )
-    tgbotusername = Config.TG_BOT_USER_NAME_BF_HER  # pylint:disable=E0602
+    tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
     if tgbotusername is not None:
-        results = await borg.inline_query(  # pylint:disable=E0602
+        results = await borg.inline_query(
             tgbotusername,
             help_string + "\n\n" + s_help_string
         )
@@ -36,21 +36,21 @@ async def _(event):
         await event.delete()
 
 
-@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="dc"))
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
+    result = await borg(functions.help.GetNearestDcRequest())
     await event.edit(result.stringify())
 
 
-@borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="config"))
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
+    result = await borg(functions.help.GetConfigRequest())
     result = result.stringify()
-    logger.info(result)  # pylint:disable=E0602
+    logger.info(result)
     await event.edit("""Telethon UserBot custom built by @amnd33p""")
 
 
