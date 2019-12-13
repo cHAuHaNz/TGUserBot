@@ -3,26 +3,23 @@
 Pluggable [``asyncio``](https://docs.python.org/3/library/asyncio.html)
 [Telegram](https://telegram.org) userbot based on
 [Telethon](https://github.com/LonamiWebs/Telethon). 
-Forked by [cHAuHaN](https://t.me/amnd33p). from Uniborg
+Forked by [cHAuHaN](https://t.me/amnd33p) from Uniborg
 
-    /**
     
-        Your Telegram account may get banned.
+    **Your Telegram account might get banned.**
 
-        I am not responsible for ANY improper use of this bot.
+    I am not responsible for ANY improper use of this bot.
 
-        This userbot is intended for the purpose of having fun with memes,
-        as well as efficiently managing groups.
+    This userbot is intended for the purpose of having fun with memes,
+    as well as efficiently managing groups.
 
-        You ended up spamming groups, getting reported left and right,
-        and you ended up in a Finale Battle with Telegram and at the end
-        Telegram Team deleted your account?
+    You ended up spamming groups, getting reported left and right,
+    and you ended up in a Final Battle with Telegram and at the end
+    Telegram Team deleted your account?
 
-        And after that, then you pointed your fingers at us
-        for getting your acoount deleted?
-
-        I will be rolling on the floor laughing at you.
-    /**
+    and then if you pointed your fingers at me for getting your acoount deleted, 
+    I will be rolling on the floor laughing at you.
+    
 
 ## Installing
 
@@ -83,15 +80,11 @@ The core features offered by the custom `TelegramClient` live under the
 [`uniborg/`](https://github.com/SpEcHiDe/uniborg/tree/master/uniborg)
 directory, with some utilities, enhancements, the `_core` plugin, and the `_inline_bot` plugin.
 
-
-## [@SpEcHlDe](https://telegram.dog/ThankTelegram)
-
 - Only two of the environment variables are mandatory.
 - This is because of `telethon.errors.rpc_error_list.ApiIdPublishedFloodError`
     - `APP_ID`:   You can get this value from https://my.telegram.org
     - `API_HASH`:   You can get this value from https://my.telegram.org
 - The userbot will work without setting the non-mandatory environment variables.
-- Please report any issues to the support group: [@SpEcHlDe](https://t.me/joinchat/AHAujEjG4FBO-TH-NrVVbg)
 
 
 ## Design
@@ -117,13 +110,8 @@ async def handler(event):
 
 
 ## Learning
-
 Check out the already-mentioned [plugins](https://github.com/SpEcHiDe/UniBorg/tree/master/stdplugins) directory, or some third-party [plugins](https://telegram.dog/UniBorg) to learn how to write your own, and consider reading [Telethon's documentation](http://telethon.readthedocs.io/).
 
 
 ## Credits
-
-
-Thanks to:
-- [lonami](https://lonami.dev) for creating [Telethon](https://github.com/lonamiwebs/Telethon)
-- [![CopyLeft](https://telegra.ph/file/b514ed14d994557a724cb.jpg)](https://telegra.ph/file/fab1017e21c42a5c1e613.mp4 "CopyLeft Credit Video")
+Thanks to: [lonami](https://lonami.dev) for creating [Telethon](https://github.com/lonamiwebs/Telethon)

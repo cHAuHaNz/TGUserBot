@@ -66,7 +66,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == borg.uid and query.startswith("@amnd33p_bot"):
+        if event.query.user_id == borg.uid and query.startswith("@UniBorg"):
             rev_text = query[::-1]
             buttons = paginate_help(0, borg._plugins, "helpme")
             result = builder.article(
@@ -86,15 +86,15 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "© @amnd33p",
-                text="""**Custom Built TGUserbot By** @amnd33p
-                        **Verified Account:** ✅
-                        **Official Channel:** https://t.me/Xpl0iter
-                        
-                        **Python 3.7.4 (default, Sep 12 2019, 01:19:52)** 
-                        **[GCC 7.4.0]**
-                        **Telethon 1.10.3**
-                        
-                        **Custom Built Fork:** https://github.com/cHAuHaNz/TGUserBot/""",
+                text="""**Custom Built TGUserBot By** @amnd33p
+                    **Verified Account:** ✅
+                    **Official Channel:** https://t.me/Xpl0iter
+                    
+                    **Python 3.7.4 (default, Sep 12 2019, 01:19:52)** 
+                    **[GCC 7.4.0]**
+                    **Telethon 1.10.3**
+                    
+                    **Custom Built Fork:** https://github.com/cHAuHaNz/TGUserBot/""",
                 buttons=[
                     [custom.Button.url("Creator👤", "https://telegram.dog/amnd33p"), custom.Button.url("📼Channel📼", "https://t.me/Xpl0iter")],
                     [custom.Button.url("👨‍💻Source👨‍💻", "https://github.com/cHAuHaNz/TGUserBot/"), custom.Button.url(
