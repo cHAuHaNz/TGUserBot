@@ -53,7 +53,8 @@ async def _(event):
 
 
 if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-    @tgbot.on(events.InlineQuery)async def inline_handler(event):
+    @tgbot.on(events.InlineQuery)
+    async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
@@ -83,7 +84,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     \n\
                     \n**Python 3.7.4 (default, Sep 12 2019, 01:19:52)** \
                     \n**[GCC 7.4.0]**\
-                    \n**Telethon 1.10.3**,
+                    \n**Telethon 1.10.3**""",
                 buttons=[
                     [custom.Button.url("Creator👤", "https://telegram.dog/amnd33p"), custom.Button.url("📼Channel📼", "https://t.me/Xpl0iter")],
                     [custom.Button.url("👨‍💻Source👨‍💻", "https://github.com/cHAuHaNz/TGUserBot/"), custom.Button.url(
