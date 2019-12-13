@@ -49,7 +49,7 @@ from telethon.tl.functions.channels import (EditAdminRequest,
 from telethon.tl.functions.messages import UpdatePinnedMessageRequest
 from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
-                               MessageMediaPhoto, PeerChat, PeerChannel)
+                               MessageMediaPhoto, PeerChat)
 ENABLE_LOG = True
 LOGGING_CHATID = Config.PRIVATE_CHANNEL_BOT_API_ID
 BANNED_RIGHTS = ChatBannedRights(
@@ -587,7 +587,7 @@ async def listbots(eventListBots):
     title = None
     mentions = f'<b>Bots in {title}:</b>\n'
     try:
-        if isinstance(eventListBots.to_id, PeerChannel) or isinstance(eventListBots.to_id, PeerChannel):
+        if isinstance(eventListBots.to_id, PeerChat):
             await eventListBots.edit("`Only Supergroups/Channels can have bots.`")
             return
         else:
