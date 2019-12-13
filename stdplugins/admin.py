@@ -49,7 +49,7 @@ from telethon.tl.functions.channels import (EditAdminRequest,
 from telethon.tl.functions.messages import UpdatePinnedMessageRequest
 from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
-                               MessageMediaPhoto, PeerChat)
+                               MessageMediaPhoto, PeerUser)
 ENABLE_LOG = True
 LOGGING_CHATID = Config.PRIVATE_CHANNEL_BOT_API_ID
 BANNED_RIGHTS = ChatBannedRights(
@@ -587,13 +587,13 @@ async def listbots(eventListBots):
     title = None
     mentions = f'<b>Bots in {title}:</b>\n'
     try:
-        if isinstance(eventListBots.to_id, PeerChat):
+        if isinstance(eventListBots.to_id, PeerUser):
             await eventListBots.edit("`Only Supergroups/Channels can have bots.`")
             return
         else:
-            title = info.title if info.title else "this chat"
+            title = info.title if info.title else "this chat."
             async for user in eventListBots.client.iter_participants(
-                    eventListBots.chat_id, filter=ChannelParticipantsBots):
+                    eventListBots.chat_id, filter=channelParticipantsBots):
                 if not user.deleted:
                     link = f"<a href=\"tg://user?id={user.id}\">{user.first_name}</a>"
                     userid = f"<code>{user.id}</code>"
