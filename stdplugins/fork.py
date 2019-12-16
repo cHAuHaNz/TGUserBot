@@ -7,8 +7,8 @@ async def _(event):
         return
     animation_interval = 1
     animation_ttl = range(0, 13)
+    input_str = event.pattern_match.group(1)
     if input_str == "fork":
-        await event.edit(input_str)
         animation_chars = [
             "`Your bot is running\n\nTelethon version:` 1.9.0\n`Python:` 3.7.3\n`User:` @amnd33p\n`Database Status: Databases functioning normally!`",
             "`Connecting To github.com...`",

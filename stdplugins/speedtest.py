@@ -43,7 +43,7 @@ async def _(event):
         response = s.results.share()
         speedtest_image = response
         if as_text:
-            await event.edit("""**SpeedTest** completed in {} seconds
+            await event.edit("""**SpeedTest** completed in {} miliseconds
 Download: {}
 Upload: {}
 Ping: {}
@@ -60,7 +60,7 @@ ISP Rating: {}""".format(ms, convert_from_bytes(download_speed), convert_from_by
             )
             await event.delete()
     except Exception as exc:
-        await event.edit("""**SpeedTest** completed in {} seconds
+        await event.edit("""**SpeedTest** completed in {} miliseconds
 Download: {}
 Upload: {}
 Ping: {}
@@ -74,10 +74,10 @@ def convert_from_bytes(size):
     n = 0
     units = {
         0: "",
-        1: "kilobytes",
-        2: "megabytes",
-        3: "gigabytes",
-        4: "terabytes"
+        1: "Kilobits",
+        2: "Megabits",
+        3: "Gigabits",
+        4: "Terabits"
     }
     while size > power:
         size /= power
