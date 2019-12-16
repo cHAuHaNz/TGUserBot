@@ -1,9 +1,8 @@
-""" Powered by @Google
+"""Powered by @Google
 Available Commands:
-.gs <query>
-.gi <query>
-.grs"""
-
+.gs <query> for Web Search
+.gi <query> for Image Search
+.grs for Reverse Image Search."""
 import asyncio
 import os
 import requests
@@ -11,20 +10,16 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from google_images_download import google_images_download
 from uniborg.util import admin_cmd
-
-
 def progress(current, total):
     logger.info("Downloaded {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
-
-
 @borg.on(admin_cmd(pattern="gs (.*)"))
 async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    await event.edit("Ruk Ja Betichod, Google Se Bolta Hoon Tera IP Ban Kare ...")
     # SHOW_DESCRIPTION = False
     input_str = event.pattern_match.group(1) # + " -inurl:(htm|html|php|pls|txt) intitle:index.of \"last modified\" (mkv|mp4|avi|epub|pdf|mp3)"
+    await event.edit("Searching for {} on Google...".format(input_str))
     input_url = "https://bots.shrimadhavuk.me/search/?q={}".format(input_str)
     headers = {"USER-AGENT": "UniBorg"}
     response = requests.get(input_url, headers=headers).json()
@@ -37,7 +32,7 @@ async def _(event):
         output_str += " 👉🏻  [{}]({}) \n\n".format(text, url)
     end = datetime.now()
     ms = (end - start).seconds
-    await event.edit("searched Google for {} in {} seconds. \n{}".format(input_str, ms, output_str), link_preview=False)
+    await event.edit("Searched Google for {} in {} Seconds. \n{}".format(input_str, ms, output_str), link_preview=False)
     await asyncio.sleep(5)
     await event.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
 
@@ -75,9 +70,8 @@ async def _(event):
         os.remove(each_file)
     end = datetime.now()
     ms = (end - start).seconds
-    await event.edit("searched Google for {} in {} seconds.".format(input_str, ms), link_preview=False)
+    await event.edit("Searched Google for {} in {} Seconds.".format(input_str, ms), link_preview=False)
     await asyncio.sleep(5)
-    await event.delete()
 
 
 @borg.on(admin_cmd(pattern="grs"))
@@ -129,6 +123,5 @@ async def _(event):
         ms = (end - start).seconds
         OUTPUT_STR = """{img_size}
 **Possible Related Search**: <a href="{prs_url}">{prs_text}</a>
-
-More Info: Open this <a href="{the_location}">Link</a> in {ms} seconds""".format(**locals())
+More Info: Open this <a href="{the_location}">Link</a>\nSearched in {ms} Seconds""".format(**locals())
     await event.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)

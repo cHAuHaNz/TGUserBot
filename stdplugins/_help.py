@@ -14,8 +14,8 @@ async def _(event):
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
         s_help_string = "use .info <module_name>"
-    help_string = """**Custom Built TGUserBot By** @amnd33p ) \n**Verified Account**: ✅\n**Official Channel**: https://t.me/Xpl0iter\n
-**Custom Built Fork**: https://github.com/cHAuHaNz/TGUserBot/""".format(
+    help_string = """**Custom Built [TGUserBot](https://github.com/cHAuHaNz/TGUserBot/) By** [cHAuHaN](tg://user?id=606846495)\n**Verified Account**: ✅\n**Official Channel**: https://t.me/Xpl0iter
+""".format(
         sys.version,
         __version__
     )

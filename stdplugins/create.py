@@ -1,10 +1,11 @@
 """Create Private Groups
 Available Commands:
-.create (b|g|c) GroupName"""
+.create (b|g|c) GroupName
+`b for Basic Group`
+`g for SuperGroup`
+`c for Channel`"""
 from telethon.tl import functions, types
 from uniborg import util
-
-
 @borg.on(util.admin_cmd("create (b|g|c) (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
@@ -27,7 +28,7 @@ async def _(event):
             result = await borg(functions.messages.ExportChatInviteRequest(
                 peer=created_chat_id,
             ))
-            await event.edit("Group `{}` created successfully. Join {}".format(group_name, result.link))
+            await event.edit("Group `{}` created successfully. [Check Here]({})".format(group_name, result.link))
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
     elif type_of_group == "g" or type_of_group == "c":
@@ -41,7 +42,7 @@ async def _(event):
             result = await borg(functions.messages.ExportChatInviteRequest(
                 peer=created_chat_id,
             ))
-            await event.edit("Channel `{}` created successfully. Join {}".format(group_name, result.link))
+            await event.edit("Channel `{}` created successfully. [Check Here]({})".format(group_name, result.link))
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
     else:

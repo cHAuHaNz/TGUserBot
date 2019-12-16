@@ -3,7 +3,6 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 import re
 from functools import partial
-
 from telethon import events
 from telethon.tl.functions.messages import EditMessageRequest
 from telethon.extensions.markdown import DEFAULT_URL_RE
@@ -12,7 +11,6 @@ from telethon.tl.types import (
     MessageEntityBold, MessageEntityItalic, MessageEntityCode,
     MessageEntityPre, MessageEntityTextUrl
 )
-
 
 def parse_url_match(m):
     entity = MessageEntityTextUrl(
