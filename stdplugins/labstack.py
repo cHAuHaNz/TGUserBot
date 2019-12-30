@@ -54,3 +54,4 @@ async def labstack(event):
         logger.info(t_response)
         t_response_arry = "https://up.labstack.com/api/v1/links/{}/receive".format(r2json['code'])
     await event.edit(t_response_arry + "\nMax Days:" + str(max_days), link_preview=False)
+    await event.client.send_message(Config.PRIVATE_GROUP_BOT_API_ID,t_response_arry + "\nMax Days:" + str(max_days), link_preview=False)
