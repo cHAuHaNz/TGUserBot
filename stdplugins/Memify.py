@@ -1,4 +1,4 @@
-e# Base by: @r4v4n4
+# Base by: @r4v4n4
 # Created by: @A_Dark_Princ3
 
 """Reply to an image/sticker with .mmf` 'text on top' ; 'text on bottom
