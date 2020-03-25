@@ -13,7 +13,7 @@ async def _(event):
     except Exception as e:
     	mentions = "..."
     chat = await event.get_input_chat()
-    async for x in borg.iter_participants(chat, 100):
+    async for x in borg.iter_participants(chat, 500):
         mentions += f"[\u2063](tg://user?id={x.id})"
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
